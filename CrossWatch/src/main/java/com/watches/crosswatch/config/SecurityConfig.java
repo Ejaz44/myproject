@@ -21,15 +21,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception
 	{
 		auth.jdbcAuthentication().dataSource(dataSource)
-		.usersByUsernameQuery("select username, password, enabled from User where username= ? ")
-		.authoritiesByUsernameQuery("select username , rolename from user u ,role r, userrole ur where u.userid=ur.userid and r.roleid=ur.roleid and username =?");
+		.usersByUsernameQuery("select userName, password, enabled from User where userName= ? ")
+		.authoritiesByUsernameQuery("select u.userName , r.roleName from User u ,Role r, UserRole ur where u.userId=ur.userId and r.roleId=ur.roleId and userName =?");
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception
 	{
 		http.authorizeRequests()
-		.antMatchers("/Category","/SubCategory","/Supplier","/Brand","/Product").access("hasRole('ROLE_ADMIN')")
+		.antMatchers("/Category","/Product","/SubCategory","/Supplier","/Brand").access("hasRole('ROLE_ADMIN')")
 		.anyRequest().permitAll()
 		.and()
 		.formLogin().loginPage("/userLogin").failureUrl("/userLogin?error")
@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 //		.and()
 //		.logout().logoutSuccessUrl("/perform_logout")
 		.and()
-		.exceptionHandling().accessDeniedPage("/403")
+		.exceptionHandling().accessDeniedPage("/accessDeniedPage")
 		.and().csrf().disable();
 	}
 }

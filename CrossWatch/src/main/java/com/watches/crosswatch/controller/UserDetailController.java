@@ -62,4 +62,10 @@ public class UserDetailController
 		}
 		return "redirect:/";
 	}
+	
+	@RequestMapping("/accessDeniedPage")
+	public String accessDeniedPage()
+	{
+		return "/AccessDeniedPage";
+	}
 }

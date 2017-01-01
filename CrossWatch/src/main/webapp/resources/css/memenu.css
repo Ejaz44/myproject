@@ -157,6 +157,9 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 .skyblue form.contact input[type="button"]{
 	background:#0194be;
 }
+.skyblue form.contact input[type="reset"]{
+	background:#0194be;
+}
 .skyblue form.contact input[type="file"]{
 	background:#0194be;
 }

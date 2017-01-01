@@ -1,5 +1,6 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,16 +49,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
-					<div class="drop">
-						<div class="box">
-							<select tabindex="4" class="dropdown drop">
-								<option value="" class="label">Rupees :</option>
-								<option value="1">Rupees</option>
-								<option value="2">Dollar</option>
-							</select>
-						</div>
-						<div class="clearfix"></div>
-					</div>
 				</div>
 <!-- 				<div class="col-md-6 top-header-left"> -->
 <!-- 					<div class="cart box_1"> -->
@@ -80,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  </c:if>
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
       <li><a href="logout"><span class=""></span> Sign out</a></li>
-		</c:if>
+	  </c:if>
 		
 		
 		
@@ -94,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--top-header-->
 	<!--start-logo-->
 	<div class="logo">
-		<a href="/"><h1>Cross Watches</h1></a>
+		<a href="/CrossWatch/"><h1>Cross Watches</h1></a>
 		<security:authorize access="isAuthenticated()">
 		<security:authentication property="principal.Username" />
 		</security:authorize>
@@ -106,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header">
 				<div class="col-md-9 header-left">
 				<div class="top-nav">
-					<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
+					<ul class="memenu skyblue"><li class="active"><a href="index">Home</a></li>
 						<li class="grid"><a href="#">Mens</a>
 
 						</li>
