@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.watches.crosswatch.dao.CategoryDAO;
 import com.watches.crosswatch.model.Category;
 
@@ -61,7 +62,7 @@ public class CategoryDAOImpl implements CategoryDAO
 		String hql = "from Category";
 		@SuppressWarnings("unchecked")
 		List<Category> getList = session.createQuery(hql).getResultList();
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String jsonList = gson.toJson(getList);
 		return jsonList;
 		

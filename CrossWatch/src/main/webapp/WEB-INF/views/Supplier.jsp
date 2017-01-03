@@ -66,11 +66,11 @@ tr,th,td {
 <form:form modelAttribute="supplier" action="addSupplier">
 
 <form:input type="hidden" path="supplierId" />
-<form:input path="supplierName" placeholder="Enter Supplier Name" />
+<form:input path="supplierName" placeholder="Enter Supplier Name" /><br/>
 <form:errors path="supplierName" />
-<form:input path="supplierAddress" placeholder="Enter Supplier Address" />
+<form:input path="supplierAddress" placeholder="Enter Supplier Address" /><br/>
 <form:errors path="supplierAddress" />
-<form:input path="supplierEmail" placeholder="Enter Supplier Email" />
+<form:input path="supplierEmail" placeholder="Enter Supplier Email" /><br/>
 <form:errors path="supplierEmail" />
 
 <input type="text" placeholder="Filter for Supplier" ng-model="test" />

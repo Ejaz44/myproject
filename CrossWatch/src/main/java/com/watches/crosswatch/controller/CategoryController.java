@@ -22,6 +22,7 @@ public class CategoryController
 	public String category(Model model)
 	{
 		model.addAttribute("category", new Category());
+		//model.addAttribute("categoryList", categoryService.getList());
 		model.addAttribute("categoryList", categoryService.getJsonList());
 		return "/Category";
 	}

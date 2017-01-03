@@ -1,33 +1,50 @@
 package com.watches.crosswatch.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
-public class Category 
+public class Category
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int categoryId;
 	
-	@NotEmpty(message = "Please enter CategoryName")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Category Name")
+	@Expose
+	@Pattern(regexp="[a-zA-Z0-9]+", message="Invalid Category Name")
 	private String categoryName;
 	
-	@NotEmpty(message = "please enter categoryDescription")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Category Description")
+	@Expose
+	@NotEmpty(message="Invalid Category Description")
 	private String categoryDescription;
 	
+	@OneToMany(mappedBy="category", fetch=FetchType.EAGER)
+	private Set<SubCategory> subCategory; 
+
 	public int getCategoryId() 
 	{
 		return categoryId;
 	}
-	
+
+	public Set<SubCategory> getSubCategory() {
+		return subCategory;
+	}
+
+	public void setSubCategory(Set<SubCategory> subCategory) {
+		this.subCategory = subCategory;
+	}
+
 	public void setCategoryId(int categoryId) 
 	{
 		this.categoryId = categoryId;

@@ -15,12 +15,10 @@ public class Brand
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int brandId;
 	
-	@NotEmpty(message = "Brand name cannot be Empty")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Brand Name")
+	@Pattern(regexp="[a-zA-Z0-9]+", message="Invalid Brand Name")
 	private String brandName;
 	
 	@NotEmpty(message = "Brand Desc cannot be Empty")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Description")
 	private String brandDescription;
 	
 	public int getBrandId() 

@@ -1,5 +1,8 @@
 package com.watches.crosswatch.model;
 
+
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,19 +13,21 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
-public class SubCategory 
+public class SubCategory
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int subCategoryId;
 	
-	@NotEmpty(message = "Enter SubCategory Name")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid SubCategory Name")
+	@Pattern(regexp="[a-zA-Z0-9]+", message="Invalid SubCategory Name")
+	@Expose
 	private String subCategoryName;
 	
+	@Expose
 	@NotEmpty(message = "Enter the Category Description")
-	@Pattern(regexp ="([a-zA-Z]{1})+[a-zA-Z0-9]+", message = "Enter valid subCategory description")
 	private String subCategoryDescription;
 	
 	private int categoryId;

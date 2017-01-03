@@ -64,10 +64,10 @@ tr,th,td {
 <form:form modelAttribute="subCategory" action="addSubCategory">
 
 <form:input type="hidden" path="subCategoryId" />
-<form:input path="subCategoryName" placeholder="Enter the SubCategoryName"/>
-<form:errors path="subCategoryName" />
-<form:input path="subCategoryDescription" placeholder="Enter the subCategoryDesc" />
-<form:errors path = "subCategoryDescription" />
+<form:input path="subCategoryName" placeholder="Enter the SubCategoryName"/><br/>
+<form:errors path="subCategoryName" /><br/>
+<form:input path="subCategoryDescription" placeholder="Enter the subCategoryDesc" /><br/>
+<form:errors path = "subCategoryDescription" /><br/>
 
 <input type="text" placeholder="Filter for SubCategory" ng-model="test" /><br/>
  <form:select path="category.categoryName" items="${categoryList}"  itemValue="categoryName" itemLabel="categoryName"/>

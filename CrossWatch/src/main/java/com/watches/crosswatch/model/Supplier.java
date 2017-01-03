@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -17,16 +18,13 @@ public class Supplier
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int supplierId;
 	
-	@NotEmpty(message = "please enter the supplierName")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Supplier Name")
+	@Pattern(regexp="[a-zA-Z0-9]+", message="Invalid Supplier Name")
 	private String supplierName;
 	
-	@NotEmpty(message = "please enter the supplier address")
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Supplier Address")
+	@Size(min=15, message="Invalid Address")
 	private String supplierAddress;
 	
-	@NotEmpty(message = "please enter the supplier email")
-	@Email(message = "Invalid EmailId")
+	@Pattern(regexp=".+@.+\\..+", message="Invalid EmailID")
 	private String supplierEmail;
 	
 	

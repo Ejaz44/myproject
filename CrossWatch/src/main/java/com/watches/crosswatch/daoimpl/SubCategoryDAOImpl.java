@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.watches.crosswatch.dao.SubCategoryDAO;
 import com.watches.crosswatch.model.SubCategory;
 
@@ -59,7 +60,7 @@ public class SubCategoryDAOImpl implements SubCategoryDAO
 		@SuppressWarnings("unchecked")
 		List<SubCategory> subCategoryList = session.createQuery(hql).getResultList();
 		
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String jsonList = gson.toJson(subCategoryList);
 		return jsonList;
 	}

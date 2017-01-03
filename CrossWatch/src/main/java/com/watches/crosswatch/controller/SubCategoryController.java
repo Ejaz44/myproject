@@ -1,8 +1,11 @@
 package com.watches.crosswatch.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,13 +34,21 @@ public class SubCategoryController
 	}
 	
 	@RequestMapping("/addSubCategory")
-	public String addSubCategory(@ModelAttribute("subCategory") SubCategory subCategory)
+	public String addSubCategory(@Valid @ModelAttribute("subCategory") SubCategory subCategory, BindingResult result, Model model)
 	{
+		if(result.hasErrors())
+		{
+			model.addAttribute("subCategoryList", subCategoryService.getJsonSubCategoryList());
+			return "/SubCategory";
+		}
+		else
+		{
 		Category category = categoryService.getCategoryByName(subCategory.getCategory().getCategoryName());
 		subCategory.setCategory(category);
 		subCategory.setCategoryId(category.getCategoryId());
 		subCategoryService.addSubCategory(subCategory);
 		return "redirect:/SubCategory";
+		}
 	}
 	
 	@RequestMapping("/editSubCategory-{subCategoryId}")
@@ -54,6 +65,4 @@ public class SubCategoryController
 		subCategoryService.deleteSubCategory(subCategoryId);
 		return "redirect:/SubCategory";
 	}	
-	
-	
 }

@@ -4,6 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.white, .white a
+{
+color:#fff;
+}
+</style>
 <title>Cross Watches</title>
 <link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
@@ -68,14 +74,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       
       <c:if test="${empty pageContext.request.userPrincipal}">
       <li><a href="userLogin"><span class=""></span> Sign in</a></li>
+            <li><a href="userRegistration"><span class=""></span> Registration</a></li>
 	  </c:if>
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
       <li><a href="logout"><span class=""></span> Sign out</a></li>
+            <li><a href="userRegistration"><span style="background:url('http://www.iconsdb.com/icons/download/white/user-16.ico')"> </span>${pageContext.request.userPrincipal.name}</a></li>
 	  </c:if>
-		
-		
-		
-      <li><a href="userRegistration"><span class=""></span> Registration</a></li>
       
     </ul>
 				
@@ -86,45 +90,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--start-logo-->
 	<div class="logo">
 		<a href="/CrossWatch/"><h1>Cross Watches</h1></a>
-		<security:authorize access="isAuthenticated()">
-		<security:authentication property="principal.Username" />
-		</security:authorize>
 	</div>
 	<!--start-logo-->
 	<!--bottom-header-->
-	<div class="header-bottom">
+		<div class="header-bottom">
 		<div class="container">
 			<div class="header">
 				<div class="col-md-9 header-left">
 				<div class="top-nav">
-					<ul class="memenu skyblue"><li class="active"><a href="index">Home</a></li>
-						<li class="grid"><a href="#">Mens</a>
-
-						</li>
-						<li class="grid"><a href="#">Womens</a>
-							
-						</li>
-						<li class="grid"><a href="#">Kids</a>
-					
-						</li>
-										<li class="grid"><a href="#">Lists</a>
+					<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
+						<c:forEach items="${categoryListDrop}" var="category">
+						<li class="grid"><a href="#">${category.categoryName}</a>
 							<div class="mepanel">
 								<div class="row">
-									<div class="col1 me-one">
+								<div class="col1 me-one">
+										<h4></h4>
 										<ul>
-											<li><a href="Category">Category</a></li>
-											<li><a href="SubCategory">Sub Category</a></li>
-											<li><a href="Supplier">Supplier</a></li>
-											<li><a href="Brand">Brand</a></li>
-											<li><a href="Product">Product</a></li>
+											<li><a href="products.html">Shoes</a></li>
+											<li><a href="products.html">Watches</a></li>
+											<li><a href="products.html">Brands</a></li>
+											<li><a href="products.html">Coats</a></li>
+											<li><a href="products.html">Accessories</a></li>
+											<li><a href="products.html">Trousers</a></li>
+										</ul>	
+									</div>
+									<div class="col1 me-one">
+										<h4>Category</h4>
+										
+										<ul>
+										<c:forEach items="${category.subCategory}" var="subCategory">
+											<li><a href="#">${subCategory.subCategoryName}</a></li>
+										</c:forEach>
 										</ul>
 									</div>
-		
-		
+<!-- 									<div class="col1 me-one"> -->
+<!-- 										<h4>Style Zone</h4> -->
+<!-- 										<ul> -->
+<!-- 											<li><a href="products.html">Shoes</a></li> -->
+<!-- 											<li><a href="products.html">Watches</a></li> -->
+<!-- 											<li><a href="products.html">Brands</a></li> -->
+<!-- 											<li><a href="products.html">Coats</a></li> -->
+<!-- 											<li><a href="products.html">Accessories</a></li> -->
+<!-- 											<li><a href="products.html">Trousers</a></li> -->
+<!-- 										</ul>	 -->
+<!-- 									</div> -->
+<!-- 									<div class="col1 me-one"> -->
+<!-- 										<h4>Popular Brands</h4> -->
+<!-- 										<ul> -->
+<!-- 											<li><a href="products.html">499 Store</a></li> -->
+<!-- 											<li><a href="products.html">Fastrack</a></li> -->
+<!-- 											<li><a href="products.html">Casio</a></li> -->
+<!-- 											<li><a href="products.html">Fossil</a></li> -->
+<!-- 											<li><a href="products.html">Maxima</a></li> -->
+<!-- 											<li><a href="products.html">Timex</a></li> -->
+<!-- 											<li><a href="products.html">TomTom</a></li> -->
+<!-- 											<li><a href="products.html">Titan</a></li> -->
+<!-- 										</ul>		 -->
+<!-- 									</div> -->
 								</div>
 							</div>
 						</li>
-										</div>
+						</c:forEach>
+						
+						</ul>
+							</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-md-3 header-right"> 
