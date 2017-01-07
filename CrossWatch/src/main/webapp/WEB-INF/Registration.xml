@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+       
+       <var name="userDetail" class="com.watches.crosswatch.model.UserDetail" />
+       <var name="shippingAddress" class="com.watches.crosswatch.model.ShippingAddress" />
+       <var name="billingAddress" class="com.watches.crosswatch.model.BillingAddress" />
+                          
+      <on-start>
+      <evaluate expression="registrationHandler.initFlow()" result="flowScope.userDetail" />
+      </on-start>
+      
+      <view-state id="start" view="register" model="userDetail">
+      <transition on="submit" to="validate" />
+      </view-state>
+      
+      <action-state id="validate">
+      <evaluate expression="registrationHandler.validateUserDetail(userDetail, messageContext)"/>
+      <transition on="success" to="ConfirmDetail" />
+      <transition on="failure" to="start" />
+      </action-state>
+      
+      <view-state id="ConfirmDetail" view="ConfirmDetail" model="userDetail">
+      <transition on="edit" to="start" />
+      <transition on="submit" to="shippingAddress" />
+      </view-state>
+      
+      <view-state id="shippingAddress" view="ShippingAddress" model="shippingAddress">
+      <transition on="submit" to="addShippingAddress" />
+      </view-state>
+      
+<!--       <action-state id="addShippingAddress"> -->
+<!--      <evaluate expression="registrationHandler.shippingAddress(shippingAddress)" /> -->
+<!--       <transition on="submit" to="billingAddress" /> -->
+<!--       </action-state> -->
+      
+      <view-state id="addShippingAddress" view="BillingAddress" model="billingAddress">
+      <transition on="submit" to="save" />
+      </view-state>
+      
+<!--       <action-state id="addBillingAddress"> -->
+<!--       <evaluate expression="registrationHandler.billingAddress(billingAddress)" /> -->
+<!--       <transition on="submit" to="save" /> -->
+<!--       </action-state> -->
+      
+      <action-state id="save">
+      <evaluate expression="registrationHandler.registerUser(userDetail, shippingAddress, billingAddress)" />
+      <transition on="success" to="welcome" />
+      </action-state>
+      
+      <end-state id="welcome" view="index">
+      </end-state>
+     
+</flow>

@@ -12,10 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.watches.crosswatch.model.Brand;
 import com.watches.crosswatch.service.BrandService;
+import com.watches.crosswatch.service.CategoryService;
 
 @Controller
 public class BrandController 
 {
+	@Autowired
+	CategoryService categoryService;
+	
 	@Autowired
 	BrandService brandService;
 	
@@ -24,6 +28,8 @@ public class BrandController
 	{
 		model.addAttribute("brand", new Brand());
 		model.addAttribute("brandList", brandService.getJsonBrandList());
+		model.addAttribute("categoryListDrop", categoryService.getList());
+		model.addAttribute("brandListDrop", brandService.getList());
 		return "/Brand";
 	}
 	

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.watches.crosswatch.dao.UserDetailDAO;
+import com.watches.crosswatch.model.BillingAddress;
 import com.watches.crosswatch.model.Cart;
+import com.watches.crosswatch.model.ShippingAddress;
 import com.watches.crosswatch.model.User;
 import com.watches.crosswatch.model.UserDetail;
 import com.watches.crosswatch.model.UserRole;
@@ -41,17 +43,27 @@ public class UserDetailDAOImpl implements UserDetailDAO
 		
 		session.saveOrUpdate(userRole);
 		
-		userDetail.getBillingAddress().setUserDetail(userDetail);
-		session.saveOrUpdate(userDetail.getBillingAddress());
-		
-		userDetail.getShippingAddress().setUserDetail(userDetail);
-		session.saveOrUpdate(userDetail.getShippingAddress());
+//		userDetail.getBillingAddress().setUserDetail(userDetail);
+//		session.saveOrUpdate(userDetail.getBillingAddress());
+//		
+//		userDetail.getShippingAddress().setUserDetail(userDetail);
+//		session.saveOrUpdate(userDetail.getShippingAddress());
 		
 		userDetail.setUserId(user.getUserId());
 		userDetail.setCartId(cart.getCartId());
 		session.saveOrUpdate(userDetail);
 		
 		session.flush();
+	}
+	
+	public void saveShippingAddress(ShippingAddress shippingAddress)
+	{
+		sessionFactory.getCurrentSession().saveOrUpdate(shippingAddress);
+	}
+	
+	public void saveBillingAddress(BillingAddress billingAddress)
+	{
+		sessionFactory.getCurrentSession().saveOrUpdate(billingAddress);
 	}
 
 }

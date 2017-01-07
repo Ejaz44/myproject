@@ -20,14 +20,14 @@ color:#fff;
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--start-menu-->
 <script src="resources/jq/simpleCart.min.js"> </script>
 <link href="resources/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="resources/jq/memenu.js"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
+<script>
+$(document).ready(function(){$(".memenu").memenu();});
+</script>	
 <!--dropdown-->
 <script src="resources/jq/jquery.easydropdown.js"></script>
 <script type="text/javascript" src="resources/javaScript/angular.min.js"></script>
@@ -74,11 +74,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       
       <c:if test="${empty pageContext.request.userPrincipal}">
       <li><a href="userLogin"><span class=""></span> Sign in</a></li>
-            <li><a href="userRegistration"><span class=""></span> Registration</a></li>
+      <li><a href="userRegistration"><span class=""></span> Registration</a></li>
 	  </c:if>
+	  
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
       <li><a href="logout"><span class=""></span> Sign out</a></li>
-            <li><a href="userRegistration"><span style="background:url('http://www.iconsdb.com/icons/download/white/user-16.ico')"> </span>${pageContext.request.userPrincipal.name}</a></li>
+      <li><a href=""><span style="background:url('http://www.iconsdb.com/icons/download/white/user-16.ico')"> </span>${pageContext.request.userPrincipal.name}</a></li>
 	  </c:if>
       
     </ul>
@@ -104,11 +105,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="mepanel">
 								<div class="row">
 								<div class="col1 me-one">
-										<h4></h4>
+										<h4>Style Zone</h4>
 										<ul>
-											<li><a href="products.html">Shoes</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">Brands</a></li>
+											<li><a href="products.html">Luxury</a></li>
+											<li><a href="products.html">Trending</a></li>
+											<li><a href="products.html">Popular</a></li>
 											<li><a href="products.html">Coats</a></li>
 											<li><a href="products.html">Accessories</a></li>
 											<li><a href="products.html">Trousers</a></li>
@@ -116,12 +117,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="col1 me-one">
 										<h4>Category</h4>
-										
 										<ul>
 										<c:forEach items="${category.subCategory}" var="subCategory">
 											<li><a href="#">${subCategory.subCategoryName}</a></li>
 										</c:forEach>
 										</ul>
+									</div>
+									<div class="col1 me-one">
+										<h4>Brands</h4>
+											<c:forEach items="${brandListDrop}" var="brand">
+											<ul>
+											<li>${brand.brandName}
+											</li>
+											</ul>
+											</c:forEach>
 									</div>
 <!-- 									<div class="col1 me-one"> -->
 <!-- 										<h4>Style Zone</h4> -->
@@ -151,7 +160,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</li>
 						</c:forEach>
-						
+						<c:if test="${pageContext.request.userPrincipal.name}">
+			
+						</c:if>
 						</ul>
 							</div>
 				<div class="clearfix"> </div>

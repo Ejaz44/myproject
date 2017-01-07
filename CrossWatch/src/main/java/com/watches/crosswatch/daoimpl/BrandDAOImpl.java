@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.watches.crosswatch.dao.BrandDAO;
 import com.watches.crosswatch.model.Brand;
 
@@ -64,7 +65,7 @@ public class BrandDAOImpl implements BrandDAO
 		@SuppressWarnings("unchecked")
 		List<Brand> brandList=session.createQuery(hql).getResultList();
 		
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String jsonList = gson.toJson(brandList);
 		return jsonList;
 	}

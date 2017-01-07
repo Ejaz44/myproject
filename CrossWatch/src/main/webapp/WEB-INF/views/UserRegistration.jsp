@@ -21,28 +21,19 @@
 <title>User Registration</title>
 </head>
 <body>
-<div class="main">
-		<h1>User Registration Form</h1>
-	 <div class="sap_tabs">	
-			<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-			  <form:form modelAttribute="userDetail" action="addUserRegistration">
-			  <ul class="resp-tabs-list">
-			  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><div class="top-img"><img src="images/top-note.png" alt=""/></div><span>Personal Details</span>
-			  	  	
-				</li>
-				  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><div class="top-img"><img src="images/top-lock.png" alt=""/></div><span>Shipping Details</span></li>
-				  <li class="resp-tab-item lost" aria-controls="tab_item-2" role="tab"><div class="top-img"><img src="images/top-key.png" alt=""/></div><span>Billing Details</span></li>
-				  <div class="clear"></div>
-			  </ul>		
-			  <!---->		  	 
-			<div class="resp-tabs-container">
-					<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-					<div class="facts">
-							<!--login1-->
-						<div class="register">
-							
-								<form:input type="hidden" path="userId" />
-
+<div class="register">
+		<div class="container">
+			<div class="register-top heading">
+				<h2>USER REGISTERATION FORM</h2>
+			</div>
+			<div class="register-main">
+				<div class="col-md-6 account-left">
+						<form:form modelAttribute="userDetail" action="addUserRegistration">
+						
+						<form:input type="hidden" path="userId" />
+								<div>	
+								<h2>Personal Details</h2>
+								</div>
 								<form:input path="userName" placeholder="Enter the User Name" />
 
 								<form:input type="text" path="password" placeholder="Enter the password" />
@@ -54,19 +45,11 @@
 								<form:input path="emailId" placeholder="Enter the Email Id" /><br/>
 
 								<form:input path="contactNumber" placeholder="Enter the Contact Number" /><br/>
-									<div class="sign-up">
-									<input type="reset" value="Reset">
-									<input type="submit" onclick="myFunction()" value="Sign In" >
-									<div class="clear"> </div>
+
+								<div>	
+								<h2>Shipping Details</h2>
 								</div>
-
-						</div>
-					</div>
-				</div>		
-			 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
-					 	<div class="facts">
-							 <div class="login">	
-
+					
 								<form:input type="hidden" path="shippingAddress.shippingAddressId" />
 
 								<form:input path="shippingAddress.flatNo" placeholder="Enter the Flat Number" />
@@ -81,17 +64,10 @@
 
 								<form:input path="shippingAddress.pincode" placeholder="Enter the Pincode" />
 
-									<div class="sign-up">
-									<input type="reset" value="Reset">
-									<input type="submit" onclick="myFunction()" value="Sign In" >
-									<div class="clear"> </div>
+							    <div>	
+								<h2>Billing Details</h2>
 								</div>
-					</div>
-				</div> 
-			</div> 			        					 
-				 <div class="tab-3 resp-tab-content" aria-labelledby="tab_item-2 item3">
-				     	<div class="facts">
-							
+							        					 
 								<form:input type="hidden" path="billingAddress.billingAddressId" />
 
 								<form:input path="billingAddress.flatNo" placeholder="Enter the Flat Number" />
@@ -105,21 +81,17 @@
 								<form:input path="billingAddress.state" placeholder="Enter the State" />
 
 								<form:input path="billingAddress.pincode" placeholder="Enter the Pincode" />
-
-									<div class="sign-up">
-									<input type="reset" value="Reset">
-									<input type="submit" onclick="myFunction()" value="Sign In" >
-									<div class="clear"> </div>
-								</div>
-							
-									</div>
-				         	</div>           	      
-				        </div>	
+          	      				
+          	      				<div class="address submit">
+          	      					<input  type="submit" value="Register User" />
+          	      					<input type="reset" value="Reset" />
+          	      				</div>
+				        	
 				        </form:form>
 				     </div>	
 		        </div>
 	        </div>
-
+</div>
 </body>
 
 </html>

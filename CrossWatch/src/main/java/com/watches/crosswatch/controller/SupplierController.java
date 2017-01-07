@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.watches.crosswatch.model.Supplier;
+import com.watches.crosswatch.service.BrandService;
+import com.watches.crosswatch.service.CategoryService;
 import com.watches.crosswatch.service.SupplierService;
 
 @Controller
@@ -18,12 +20,18 @@ public class SupplierController
 {
 	@Autowired
 	SupplierService supplierService;
+	@Autowired
+	BrandService brandService;
+	@Autowired
+	CategoryService categoryService;
 	
 	@RequestMapping("/Supplier")
 	public String supplier(Model model)
 	{
 		model.addAttribute("supplier", new Supplier());
 		model.addAttribute("supplierList", supplierService.getJsonSupplierList());
+		model.addAttribute("categoryListDrop", categoryService.getList());
+		model.addAttribute("brandListDrop", brandService.getList());
 		return "/Supplier";
 	}
 	

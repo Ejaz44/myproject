@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.watches.crosswatch.model.Category;
 import com.watches.crosswatch.model.SubCategory;
+import com.watches.crosswatch.service.BrandService;
 import com.watches.crosswatch.service.CategoryService;
 import com.watches.crosswatch.service.SubCategoryService;
 
@@ -22,6 +23,8 @@ public class SubCategoryController
 	SubCategoryService subCategoryService;
 	@Autowired 
 	CategoryService categoryService;
+	@Autowired
+	BrandService brandService;
 	
 	@RequestMapping("/SubCategory")
 	public String subCategory(Model model)
@@ -30,6 +33,8 @@ public class SubCategoryController
 		model.addAttribute("subCategory", new SubCategory());
 		model.addAttribute("categoryList", categoryService.getList());
 		model.addAttribute("subCategoryList", subCategoryService.getJsonSubCategoryList());
+		model.addAttribute("categoryListDrop", categoryService.getList());
+		model.addAttribute("brandListDrop", brandService.getList());
 		return "/SubCategory";
 	}
 	

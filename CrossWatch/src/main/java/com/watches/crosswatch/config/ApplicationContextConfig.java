@@ -1,3 +1,4 @@
+
 package com.watches.crosswatch.config;
 
 
@@ -89,5 +90,23 @@ public class ApplicationContextConfig
 	    sessionBuilder.addAnnotatedClass(BillingAddress.class);
 	    
 		return sessionBuilder.buildSessionFactory();
+	}
+	
+	@Bean(name="registrationHandler")
+	public RegistrationHandler registrationHandler()
+	{
+		return new RegistrationHandler();
+	}
+	
+	@Bean(name="shippingAddress")
+	public ShippingAddress shippingAddress()
+	{
+		return new ShippingAddress();
+	}
+	
+	@Bean(name="billingAddress")
+	public BillingAddress billingAddress()
+	{
+		return new BillingAddress();
 	}
 }

@@ -8,6 +8,8 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class Brand 
 {
@@ -15,9 +17,11 @@ public class Brand
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int brandId;
 	
+	@Expose
 	@Pattern(regexp="[a-zA-Z0-9]+", message="Invalid Brand Name")
 	private String brandName;
 	
+	@Expose
 	@NotEmpty(message = "Brand Desc cannot be Empty")
 	private String brandDescription;
 	
