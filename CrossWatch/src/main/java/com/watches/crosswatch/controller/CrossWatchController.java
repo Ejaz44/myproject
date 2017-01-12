@@ -25,5 +25,15 @@ public class CrossWatchController {
 		return "index";
 	}
 	
+	@RequestMapping("/AboutUS")
+	public String aboutUs(Model model)
+	{
+		return "AboutUS";
+	}
 	
+//	@RequestMapping("/viewProduct")
+//	public String viewProduct(Model model)
+//	{
+//		return "viewProduct";
+//	}
 }

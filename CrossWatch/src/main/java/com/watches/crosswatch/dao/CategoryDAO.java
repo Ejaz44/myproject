@@ -10,7 +10,7 @@ public interface CategoryDAO
 	
 	public List<Category> getList();
 	
-	public Category getListById(int categoryId); 
+	public Category getCategoryById(int categoryId); 
 	
 	public void deleteCategory(int categoryId);
 	

@@ -19,8 +19,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.watches.crosswatch.model.BillingAddress;
 import com.watches.crosswatch.model.Brand;
 import com.watches.crosswatch.model.Cart;
+import com.watches.crosswatch.model.CartItem;
 import com.watches.crosswatch.model.Category;
 import com.watches.crosswatch.model.Product;
+import com.watches.crosswatch.model.ProductDetail;
 import com.watches.crosswatch.model.Role;
 import com.watches.crosswatch.model.ShippingAddress;
 import com.watches.crosswatch.model.SubCategory;
@@ -88,6 +90,8 @@ public class ApplicationContextConfig
 	    sessionBuilder.addAnnotatedClass(Cart.class);
 	    sessionBuilder.addAnnotatedClass(ShippingAddress.class);
 	    sessionBuilder.addAnnotatedClass(BillingAddress.class);
+	    sessionBuilder.addAnnotatedClass(ProductDetail.class);
+	    sessionBuilder.addAnnotatedClass(CartItem.class);
 	    
 		return sessionBuilder.buildSessionFactory();
 	}

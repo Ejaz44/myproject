@@ -52,7 +52,7 @@ public class BrandController
 	@RequestMapping("editBrand-{brandId}")
 	public String editBrand(Model model, @PathVariable("brandId") int brandId)
 	{
-		model.addAttribute("brand", brandService.getListById(brandId));
+		model.addAttribute("brand", brandService.getBrandById(brandId));
 		return("Brand");
 	}
 	

@@ -3,6 +3,7 @@ package com.watches.crosswatch.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -13,11 +14,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.watches.crosswatch.model.Brand;
 import com.watches.crosswatch.model.Category;
 import com.watches.crosswatch.model.Product;
+import com.watches.crosswatch.model.ProductDetail;
 import com.watches.crosswatch.model.SubCategory;
 import com.watches.crosswatch.model.Supplier;
 import com.watches.crosswatch.service.BrandService;
@@ -63,7 +68,7 @@ public class ProductController
 	}
 	
 	@RequestMapping("/addProduct")
-	public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model)
+	public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model, @RequestParam("file") List<MultipartFile> productImage)
 	{
 		if(bindingResult.hasErrors())
 		{
@@ -90,21 +95,21 @@ public class ProductController
 		
 		productService.addProduct(product);
 		
-		String path ="D:\\My Project\\CrossWatch\\src\\main\\webapp\\resources\\images\\";
-		
-		path = path+String.valueOf(product.getProductId()+".jpg");
-		File file = new File(path);
-		
-		MultipartFile multipartFile = product.getProductImage();
-		
+		List <MultipartFile> file = productImage;
+		for(int i=0; i <= file.size();i++)
 		try
 		{
-		byte[] bytes;
-		bytes = multipartFile.getBytes();
-		FileOutputStream fos = new FileOutputStream(file);
+			MultipartFile fileDetails = file.get(i);
+			String path ="D:\\My Project\\CrossWatch\\src\\main\\webapp\\resources\\images\\";
+			path = path+String.valueOf(product.getProductId())+"-"+i+".jpg";
+			File f = new File(path);
+			byte[] bytes;
+		bytes = fileDetails.getBytes();
+		FileOutputStream fos = new FileOutputStream(f);
 		BufferedOutputStream bos = new BufferedOutputStream(fos);
 		bos.write(bytes);
 		bos.close();
+		System.out.println("file uploaded successfully.");
 		}
 		catch(Exception e)
 		{
@@ -121,7 +126,7 @@ public class ProductController
 		model.addAttribute("subCategoryList", subCategoryService.getList());
 		model.addAttribute("supplierList", supplierService.getList());
 		model.addAttribute("brandList", brandService.getList());
-		model.addAttribute("product", productService.getListById(productId));
+		model.addAttribute("product", productService.getProductById(productId));
 		
 		return "/Product";
 	}
@@ -131,5 +136,19 @@ public class ProductController
 	{
 		productService.deleteProduct(productId);
 		return "redirect:/Product";
+	}
+	
+	@RequestMapping("viewProduct-{productId}")
+	public String viewProduct(Model model, @PathVariable("productId") int productId)
+	{
+		
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String pdt = gson.toJson(productService.getProductById(productId));
+		model.addAttribute("product", pdt);
+//		model.addAttribute("p", product);
+		model.addAttribute("categoryListDrop", categoryService.getList());
+		model.addAttribute("brandListDrop", brandService.getList());
+		
+		return "viewProduct";
 	}
 }

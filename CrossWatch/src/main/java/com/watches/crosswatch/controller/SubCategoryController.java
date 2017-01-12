@@ -59,7 +59,7 @@ public class SubCategoryController
 	@RequestMapping("/editSubCategory-{subCategoryId}")
 	public String editSubCategory(Model model, @PathVariable("subCategoryId") int subCategoryId)
 	{
-		model.addAttribute("subCategory", subCategoryService.getListById(subCategoryId));
+		model.addAttribute("subCategory", subCategoryService.getSubCategoryById(subCategoryId));
 		model.addAttribute("categoryList", categoryService.getList());
 		return "/SubCategory";
 	}

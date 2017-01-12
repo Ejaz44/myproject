@@ -10,7 +10,7 @@ public interface SupplierDAO
 	
 	public List<Supplier> getList();
 	
-	public Supplier getListById(int supplierId);
+	public Supplier getSupplierById(int supplierId);
 	
 	public void deleteSupplier(int supplierId);
 	

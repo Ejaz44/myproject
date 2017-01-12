@@ -10,7 +10,7 @@ public interface SubCategoryDAO
 	
 	public List<SubCategory> getList();
 	
-	public SubCategory getListById(int subCategoryId);
+	public SubCategory getSubCategoryById(int subCategoryId);
 	
 	public void deleteSubCategory(int subCategoryId);
 	

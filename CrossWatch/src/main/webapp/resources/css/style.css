@@ -1,4 +1,9 @@
 
+.white, .white a
+{
+	color: #fff;
+}
+
 body{
 	background:#fff;
 	font-family: 'Lato-Regular';
@@ -51,7 +56,7 @@ body a{
 /*--end-logo--*/
 /*--starts-top-header--*/
 .top-header {
-    background: #000;
+    background: grey;
     padding: 10px 0px;
 }
 .search-bar input[type="text"] {

@@ -21,6 +21,12 @@ public class UserDetailService
 		userDetailDAOImpl.addUserDetail(userDetail);
 	}
 	
+	public UserDetail getUserByName(String userName)
+	{
+		return userDetailDAOImpl.getUserByName(userName);
+		
+	}
+	
 	public void saveShippingAddress(ShippingAddress shippingAddress)
 	{
 		userDetailDAOImpl.saveShippingAddress(shippingAddress);

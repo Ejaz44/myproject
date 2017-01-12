@@ -9,4 +9,5 @@ public interface UserDetailDAO
 	public void addUserDetail(UserDetail userDetail);
 	public void saveShippingAddress(ShippingAddress shippingAddress);
 	public void saveBillingAddress(BillingAddress billingAddress);
+	public UserDetail getUserByName(String userName);
 }

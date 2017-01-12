@@ -29,7 +29,7 @@ public class SubCategoryDAOImpl implements SubCategoryDAO
 		List<SubCategory> subCategoryList = session.createQuery(hql).getResultList();
 		return subCategoryList;
 	}
-	public SubCategory getListById(int subCategoryId) 
+	public SubCategory getSubCategoryById(int subCategoryId) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		String hql = "from SubCategory where subCategoryId="+subCategoryId;

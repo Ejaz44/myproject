@@ -4,12 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.white, .white a
-{
-color:#fff;
-}
-</style>
 <title>Cross Watches</title>
 <link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
@@ -32,19 +26,9 @@ $(document).ready(function(){$(".memenu").memenu();});
 <script src="resources/jq/jquery.easydropdown.js"></script>
 <script type="text/javascript" src="resources/javaScript/angular.min.js"></script>
 
-	<meta charset="utf-8">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<meta name="keywords" content="footer, address, phone, icons" />
-
 	<link rel="stylesheet" href="resources/css/footer.css">
-
 	
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
 
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 			
@@ -73,13 +57,13 @@ $(document).ready(function(){$(".memenu").memenu();});
       <li><a href="#"><span class="glyphicons glyphicons-shopping-bag"></span>Go to Cart</a></li>
       
       <c:if test="${empty pageContext.request.userPrincipal}">
-      <li><a href="userLogin"><span class=""></span> Sign in</a></li>
+      <li><a href="userLogin"><img src="resources/images/account .png" /> Sign in</a></li>
       <li><a href="userRegistration"><span class=""></span> Registration</a></li>
 	  </c:if>
 	  
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
       <li><a href="logout"><span class=""></span> Sign out</a></li>
-      <li><a href=""><span style="background:url('http://www.iconsdb.com/icons/download/white/user-16.ico')"> </span>${pageContext.request.userPrincipal.name}</a></li>
+      <li><a href=""><img src="resources/images/account .png" />${pageContext.request.userPrincipal.name}</a></li>
 	  </c:if>
       
     </ul>

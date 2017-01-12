@@ -25,9 +25,9 @@ public class SubCategoryService
 		return subCategoryDAOImpl.getList();
 	}
 	
-	public SubCategory getListById(int subCategoryId)
+	public SubCategory getSubCategoryById(int subCategoryId)
 	{
-		return subCategoryDAOImpl.getListById(subCategoryId);
+		return subCategoryDAOImpl.getSubCategoryById(subCategoryId);
 	}
 	
 	public void deleteSubCategory(int subCategoryId)

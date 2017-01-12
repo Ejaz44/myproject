@@ -31,7 +31,7 @@ public class CategoryDAOImpl implements CategoryDAO
 		return categoryList;
 	}
 
-	public Category getListById(int categoryId) 
+	public Category getCategoryById(int categoryId) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		String hql = "from Category where categoryId="+categoryId;

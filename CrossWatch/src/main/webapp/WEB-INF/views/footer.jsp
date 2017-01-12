@@ -14,7 +14,7 @@
 					<ul>
 						<li><a href="#"><p>Specials</p></a></li>
 						<li><a href="#"><p>New Products</p></a></li>
-						<li><a href="#"><p>Our Stores</p></a></li>
+						<li><a href="AboutUS"><p>Our Stores</p></a></li>
 						<li><a href="contact.html"><p>Contact Us</p></a></li>
 						<li><a href="#"><p>Top Sellers</p></a></li>
 					</ul>

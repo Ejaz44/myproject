@@ -83,7 +83,7 @@
 				<div class="product-one">
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/collection1.jpg" alt="" /></a>
+							<a href="viewProduct-{{productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/casio index.jpg" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -164,7 +164,7 @@
 					</div>
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/watch image2.jpg" alt="" /></a>
+							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/collection5.jpg" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>

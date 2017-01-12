@@ -33,7 +33,7 @@ public class BrandDAOImpl implements BrandDAO
 	}
 
 	
-	public Brand getListById(int brandId) 
+	public Brand getBrandById(int brandId) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		String hql = "from Brand where brandId="+brandId;

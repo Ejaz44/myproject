@@ -25,9 +25,9 @@ public class SupplierService
 		return supplierDAOImpl.getList();
 	}
 	
-	public Supplier getListById(int supplierId)
+	public Supplier getSupplierById(int supplierId)
 	{
-		return supplierDAOImpl.getListById(supplierId);
+		return supplierDAOImpl.getSupplierById(supplierId);
 	}
 	
 	public void deleteSupplier(int supplierId)

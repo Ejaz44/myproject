@@ -1,5 +1,7 @@
 package com.watches.crosswatch.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,35 +14,45 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class Product 
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Expose
 	private int productId;
-	
+	@Expose
 	@NotEmpty
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Product Name")
 	private String productName;
-	
+	@Expose
 	@NotEmpty
-	@Pattern(regexp="[a-zA-Z]{1}+[a-zA-Z0-9]+", message="Invalid Product Description")
 	private String productDescription;
-	
-	@Pattern(regexp="[0-9]+", message = "Invalid Quantity")
+	@Expose
+	@NotEmpty
+	private String additionalInfo;
+	@Expose
 	private int productQuantity;
-	
-	@Pattern(regexp="[0-9]+", message = "Invalid Price")
+	@Expose
 	private int productPrice;
-	
-	@Pattern(regexp="[0-9]+", message = "Invalid Discount")
+	@Expose
 	private int productDiscount;
+	@Expose
+	private String productColor;
+	@Expose
+	private String productSize;
+	@Expose
 	private int categoryId;
+	@Expose
 	private int subCategoryId;
+	@Expose
 	private int supplierId;
+	@Expose
 	private int brandId;
+	
 	@Transient
-	private MultipartFile productImage;
+	List <MultipartFile> productImage;
 	
 	@ManyToOne
 	@JoinColumn(name="categoryId", updatable=false, insertable=false, nullable=false)
@@ -58,12 +70,20 @@ public class Product
 	@JoinColumn(name="brandId", updatable=false, insertable=false, nullable=false)
 	private Brand brand;
 
-	public MultipartFile getProductImage() {
+	public List<MultipartFile> getProductImage() {
 		return productImage;
 	}
 
-	public void setProductImage(MultipartFile productImage) {
+	public void setProductImage(List<MultipartFile> productImage) {
 		this.productImage = productImage;
+	}
+
+	public String getAdditionalInfo() {
+		return additionalInfo;
+	}
+
+	public void setAdditionalInfo(String additionalInfo) {
+		this.additionalInfo = additionalInfo;
 	}
 
 	public int getProductId() {
@@ -177,4 +197,21 @@ public class Product
 	public void setBrand(Brand brand) {
 		this.brand = brand;
 	}
+	public String getProductColor() {
+		return productColor;
+	}
+
+	public void setProductColor(String productColor) {
+		this.productColor = productColor;
+	}
+
+	public String getProductSize() {
+		return productSize;
+	}
+
+	public void setProductSize(String productSize) {
+		this.productSize = productSize;
+	}
+
+
 }

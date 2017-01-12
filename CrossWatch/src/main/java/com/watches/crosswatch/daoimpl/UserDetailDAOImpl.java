@@ -1,5 +1,7 @@
 package com.watches.crosswatch.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,5 +67,13 @@ public class UserDetailDAOImpl implements UserDetailDAO
 	{
 		sessionFactory.getCurrentSession().saveOrUpdate(billingAddress);
 	}
-
+	
+	public UserDetail getUserByName(String userName)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from UserDetail where userName = "+"'"+userName+"'";
+		@SuppressWarnings("unchecked")
+		List<UserDetail> userNameById = session.createQuery(hql).getResultList();
+		return userNameById.get(0);
+	}
 }

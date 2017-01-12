@@ -26,9 +26,9 @@ public class ProductService
 		return productDAOImpl.getList();
 	}
 	
-	public Product getListById(int productId)
+	public Product getProductById(int productId)
 	{
-		return productDAOImpl.getListById(productId);
+		return productDAOImpl.getProductById(productId);
 	}
 	
 	public void deleteProduct(int productId)
@@ -39,5 +39,10 @@ public class ProductService
 	public String getJsonProductList() 
 	{
 		return productDAOImpl.getJsonProductList();
+	}
+	
+	public void updateQuantity(int productId)
+	{
+		productDAOImpl.updateQuantity(productId);
 	}
 }

@@ -1,3 +1,4 @@
+
 package com.watches.crosswatch.model;
 
 
@@ -20,6 +21,7 @@ public class SubCategory
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Expose
 	private int subCategoryId;
 	
 	@Pattern(regexp="[a-zA-Z0-9]+", message="Invalid SubCategory Name")

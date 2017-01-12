@@ -68,6 +68,8 @@ function toggle()
 <form:errors path = "productName" /><br>
 <form:input path="productDescription" placeholder="Enter the Product Desc" />
 <form:errors path = "productDescription" /><br>
+<form:input path="additionalInfo" placeholder="Enter the Additional Info"/>
+<form:errors path="additionalInfo" />
 <form:input path="productQuantity" placeholder="Enter the Quantity"/>
 <form:errors path = "productQuantity" /><br>
 <form:input path="productPrice" placeholder="Enter the Price"/>
@@ -91,7 +93,7 @@ function toggle()
 <input type="submit" value="Add product" />
 
 <input class="address button" type="button" id="buttonToggle" value="Show List" onclick="toggle();"/>
-<form:input type="file" path="productImage" class="address file"/>
+<form:input type="file" path="productImage" class="address file" multiple ="multiple"/>
 </c:if>
 </div>
 </div>
@@ -172,6 +174,7 @@ function toggle()
 <td><a href="deleteProduct-{{plist.productId}}">Delete</a></td>
 </tr>
 </table>
+</div>
 </div>
 </body>
 </html>

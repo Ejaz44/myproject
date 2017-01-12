@@ -25,9 +25,9 @@ public class BrandService
 		return brandDAOImpl.getList();
 	}
 	
-	public Brand getListById(int brandId)
+	public Brand getBrandById(int brandId)
 	{
-		return brandDAOImpl.getListById(brandId);
+		return brandDAOImpl.getBrandById(brandId);
 	}
 	
 	public void deleteBrand(int brandId)

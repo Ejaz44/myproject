@@ -31,7 +31,7 @@ public class SupplierDAOImpl implements SupplierDAO
 		return supplierList;
 	}
 
-	public Supplier getListById(int supplierId) 
+	public Supplier getSupplierById(int supplierId) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		String hql = "from Supplier where supplierId="+supplierId;

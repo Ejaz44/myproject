@@ -53,7 +53,7 @@ public class SupplierController
 	@RequestMapping("/editSupplier-{supplierId}")
 	public String editSupplier(Model model, @PathVariable("supplierId") int supplierId)
 	{
-		model.addAttribute("supplier", supplierService.getListById(supplierId));
+		model.addAttribute("supplier", supplierService.getSupplierById(supplierId));
 		return "Supplier";
 	}
 	

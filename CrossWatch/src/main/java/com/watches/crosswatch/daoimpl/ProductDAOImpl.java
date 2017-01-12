@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.watches.crosswatch.dao.ProductDAO;
 import com.watches.crosswatch.model.Product;
 
@@ -20,8 +21,7 @@ public class ProductDAOImpl implements ProductDAO
 	
 	public void addProduct(Product product) 
 	{
-		sessionFactory.getCurrentSession().saveOrUpdate(product);
-		
+		sessionFactory.getCurrentSession().saveOrUpdate(product);	
 	}
 
 	public List<Product> getList() 
@@ -33,7 +33,7 @@ public class ProductDAOImpl implements ProductDAO
 		return productList;
 	}
 
-	public Product getListById(int productId) 
+	public Product getProductById(int productId) 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		String hql="from Product where productId="+productId;
@@ -57,8 +57,14 @@ public class ProductDAOImpl implements ProductDAO
 		@SuppressWarnings("unchecked")
 		List<Product> productList=session.createQuery(hql).getResultList();
 		
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String jsonList = gson.toJson(productList);
 		return jsonList;
+	}
+	
+	public void updateQuantity(int productId)
+	{
+		String hql = "update Product set productQuantity = productQuantity-1 where productId ="+productId;
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
 	}
 }

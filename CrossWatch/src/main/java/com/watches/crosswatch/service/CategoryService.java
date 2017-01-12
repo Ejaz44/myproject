@@ -26,9 +26,9 @@ public class CategoryService
 		return categoryDAOImpl.getList();
 	}
 	
-	public Category getListById(int categoryId)
+	public Category getCategoryById(int categoryId)
 	{
-		return categoryDAOImpl.getListById(categoryId);
+		return categoryDAOImpl.getCategoryById(categoryId);
 	}
 	
 	public void deleteCategory(int categoryId)

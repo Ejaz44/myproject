@@ -10,7 +10,7 @@ public interface BrandDAO
 	
 	public List<Brand> getList();
 	
-	public Brand getListById(int brandId);
+	public Brand getBrandById(int brandId);
 	
 	public void deleteBrand(int brandId);
 	
