@@ -121,6 +121,7 @@ public class RegistrationHandler
 		userDetail.setBillingAddress(billingAddress);
 		userDetailService.saveShippingAddress(shippingAddress);
 		userDetailService.saveBillingAddress(billingAddress);
+		
 		userDetailService.addUserDetail(userDetail);
 		return "success";
 	}

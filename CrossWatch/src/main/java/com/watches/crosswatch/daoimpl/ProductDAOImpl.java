@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.watches.crosswatch.dao.ProductDAO;
 import com.watches.crosswatch.model.Product;
+import com.watches.crosswatch.model.viewProduct;
 
 
 @Repository
@@ -66,5 +67,14 @@ public class ProductDAOImpl implements ProductDAO
 	{
 		String hql = "update Product set productQuantity = productQuantity-1 where productId ="+productId;
 		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+	}
+	
+	public viewProduct getViewProductById(int productId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from viewProduct where productId ="+productId;
+		@SuppressWarnings("unchecked")
+		List<viewProduct> getVPById= session.createQuery(hql).getResultList();
+		return getVPById.get(0);
 	}
 }

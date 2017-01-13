@@ -76,4 +76,31 @@ public class UserDetailDAOImpl implements UserDetailDAO
 		List<UserDetail> userNameById = session.createQuery(hql).getResultList();
 		return userNameById.get(0);
 	}
+	
+	public UserDetail getUserById(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from UserDetail where userId = "+userId;
+		@SuppressWarnings("unchecked")
+		List<UserDetail> userById = session.createQuery(hql).getResultList();
+		return userById.get(0);
+	}
+	
+	public ShippingAddress getShippingAddressById(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from ShippingAddress where UserDetail_UserId = "+userId;
+		@SuppressWarnings("unchecked")
+		List<ShippingAddress> shippingById = session.createQuery(hql).getResultList();
+		return shippingById.get(0);
+	}
+	
+	public BillingAddress getBillingAddressById(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from BillingAddress where UserDetail_UserId = "+userId;
+		@SuppressWarnings("unchecked")
+		List<BillingAddress> billingById = session.createQuery(hql).getResultList();
+		return billingById.get(0);
+	}
 }

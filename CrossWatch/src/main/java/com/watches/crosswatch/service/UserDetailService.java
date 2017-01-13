@@ -36,4 +36,19 @@ public class UserDetailService
 	{
 		userDetailDAOImpl.saveBillingAddress(billingAddress);
 	}
+	
+	public UserDetail getUserById(int userId)
+	{
+		return userDetailDAOImpl.getUserById(userId);
+	}
+	
+	public ShippingAddress getShippingAddressById(int userId)
+	{
+		return userDetailDAOImpl.getShippingAddressById(userId);
+	}
+	
+	public BillingAddress getBillingAddressById(int userId)
+	{
+		return userDetailDAOImpl.getBillingAddressById(userId);
+	}
 }

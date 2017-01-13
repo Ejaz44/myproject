@@ -30,5 +30,5 @@ public class CartItemDAOImpl implements CartItemDAO
 		List<CartItem> cartItemById = session.createQuery(hql).getResultList();
 		return cartItemById.get(0);
 	}
-
+	
 }

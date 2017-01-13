@@ -51,13 +51,13 @@
 						<div class="flexslider">
 							  <ul class="slides">
 								<li data-thumb="resources/images/casio small1.jpg">
-									<div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+									<div class="thumb-image"> <img src="resources/images/casio big1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li>
 								<li data-thumb="resources/images/casio small2.jpg">
-									 <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+									 <div class="thumb-image"> <img src="resources/images/casio big2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li>
 								<li data-thumb="resources/images/casio small3.jpg">
-								   <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								   <div class="thumb-image"> <img src="resources/images/casio big3.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li> 
 							  </ul>
 						</div>
@@ -94,7 +94,7 @@
 							<div class="clearfix"> </div>
 							</div>
 							
-							<h5 class="item_price">{{jsonData.productPrice}}</h5>
+							<h5 class="item_price">Rs. {{jsonData.productPrice}}</h5>
 							<p>{{jsonData.productDescription}}</p>
 							<div class="available">
 								

@@ -58,7 +58,7 @@ $(document).ready(function(){$(".memenu").memenu();});
       
       <c:if test="${empty pageContext.request.userPrincipal}">
       <li><a href="userLogin"><img src="resources/images/account .png" /> Sign in</a></li>
-      <li><a href="userRegistration"><span class=""></span> Registration</a></li>
+      <li><a href="reg"><span class=""></span> Registration</a></li>
 	  </c:if>
 	  
 	  <c:if test="${!empty pageContext.request.userPrincipal}">

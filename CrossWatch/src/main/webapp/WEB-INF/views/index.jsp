@@ -18,6 +18,7 @@
 	</div>
 	<!--banner-ends--> 
 	<!--Slider-Starts-Here-->
+	
 				<script src="resources/jq/responsiveslides.min.js"></script>
 			 <script>
 			    // You can also use "$(window).load(function() {"
@@ -41,6 +42,7 @@
 			  </script>
 			<!--End-slider-script-->
 	<!--about-starts-->
+	
 	<div class="about"> 
 		<div class="container">
 			<div class="about-top grid-1">
@@ -83,7 +85,7 @@
 				<div class="product-one">
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="viewProduct-{{productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/casio index.jpg" alt="" /></a>
+							<a href="viewProduct-{{jsonData.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/casio index.jpg" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -193,5 +195,5 @@
 			</div>
 		</div>
 	</div>
-	
+	</div>
 <%@ include file="footer.jsp" %>

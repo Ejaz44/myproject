@@ -57,8 +57,6 @@ public class ShippingAddress implements Serializable
 		this.flatNo = flatNo;
 	}
 
-
-
 	public String getLocality() 
 	{
 		return locality;
@@ -103,6 +101,4 @@ public class ShippingAddress implements Serializable
 	public void setState(String state) {
 		this.state = state;
 	}
-	
-	
 }

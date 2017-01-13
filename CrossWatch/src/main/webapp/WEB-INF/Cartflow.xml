@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+       
+       <var name="mainClass" class="com.watches.crosswatch.model.MainClass" />
+       <var name="shippingAddress" class="com.watches.crosswatch.model.ShippingAddress" />
+       <var name="billingAddress" class="com.watches.crosswatch.model.BillingAddress" />
+                          
+      <on-start>
+      <evaluate expression="checkoutHandler.initflow()" result="flowScope.mainClass" />
+      </on-start>
+      
+      <action-state id="cart">
+      	<evaluate expression="userDetailService.getShippingAddressById(externalContext.sessionMap.userId)" result="flowScope.billingAddress"></evaluate>
+      	<transition on="success" to="start" />
+      </action-state>
+      
+      <view-state id="start" view="DisplayBilling" model="BillingAddress">
+      	<transition on="submit" to="confirmShipping" />
+      </view-state>
+      
+<!--       <view-state id="confirmShipping" view="ConfirmShipping" model="mainClass"> -->
+<!--       <transition on="edit" to="shippingAddress" /> -->
+<!--       <transition on="submit" to="confirmBilling" /> -->
+<!--       </view-state> -->
+      
+<!--       <view-state id="shippingAddress" view="ShippingAddress" model="mainClass"> -->
+<!--       	<transition on = "submit" to="validate" /> -->
+<!--       </view-state> -->
+      
+<!--       <action-state id="validate"> -->
+<!--       	<evaluate expression="checkoutHandler.validateShippingAddress(shippingAddress, messageContext)"></evaluate> -->
+<!--       	<transition on="success"  to="confirmBilling" /> -->
+<!--       	<transition on="failure" to="shippingAddress" /> -->
+<!--       </action-state> -->
+      
+<!--       <view-state id="confirmBilling" view="ConfirmBilling" model="mainClass"> -->
+<!--       	<transition on="edit" to="billingAddress" /> -->
+<!--       	<transition on="submit" to="validate" /> -->
+<!--       </view-state> -->
+      
+</flow>

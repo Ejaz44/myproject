@@ -9,11 +9,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class UserDetail implements Serializable 
-{	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+{
 	@Id
 	private int userId;
 	private String userName;
