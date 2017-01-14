@@ -43,6 +43,7 @@
 			<!--End-slider-script-->
 	<!--about-starts-->
 	
+	<div ng-app="app" ng-controller="myCtrl">
 	<div class="about"> 
 		<div class="container">
 			<div class="about-top grid-1">
@@ -79,17 +80,17 @@
 	</div>
 	<!--about-end-->
 	<!--product-starts-->
-	<div class="product"> 
+	<div class="product" > 
 		<div class="container">
-			<div class="product-top">
-				<div class="product-one">
-					<div class="col-md-3 product-left">
+			<div class="product-top" >
+				<div class="product-one" >
+					<div class="col-md-3 product-left" >
 						<div class="product-main simpleCart_shelfItem">
-							<a href="viewProduct-{{jsonData.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/casio index.jpg" alt="" /></a>
+							<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/casio index.jpg" alt="" /></a>
 							<div class="product-bottom">
-								<h3>Smart Watches</h3>
+								<h3>{{p.productName}}</h3>
 								<p>Explore Now</p>
-								<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">Rs 329</span></h4>
+								<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">{{p.productPrice}}</span></h4>
 							</div>
 							<div class="srch">
 								<span>-50%</span>
@@ -195,5 +196,12 @@
 			</div>
 		</div>
 	</div>
+	<script>
+var app=angular.module("app",[]);
+app.controller("myCtrl", function($scope)
+	{
+		$scope.jsonData=${productList};
+	});
+</script>
 	</div>
 <%@ include file="footer.jsp" %>

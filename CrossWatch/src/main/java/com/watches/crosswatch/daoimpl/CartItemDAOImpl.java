@@ -31,4 +31,10 @@ public class CartItemDAOImpl implements CartItemDAO
 		return cartItemById.get(0);
 	}
 	
+	public void updateFlag(int cartItemId)
+	{
+		String hql = "update CartItem set flag = true where cartItemId ="+cartItemId;
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+	}
+	
 }

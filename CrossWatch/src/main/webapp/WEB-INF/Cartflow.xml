@@ -1,45 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <flow xmlns="http://www.springframework.org/schema/webflow"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
-       
-       <var name="mainClass" class="com.watches.crosswatch.model.MainClass" />
-       <var name="shippingAddress" class="com.watches.crosswatch.model.ShippingAddress" />
-       <var name="billingAddress" class="com.watches.crosswatch.model.BillingAddress" />
-                          
-      <on-start>
-      <evaluate expression="checkoutHandler.initflow()" result="flowScope.mainClass" />
-      </on-start>
+	<var name="buyNow" class="com.watches.crosswatch.model.BuyNow" />
+	<var name="shippingAddress" class="com.watches.crosswatch.model.ShippingAddress" />
+	<var name="billingAddress" class="com.watches.crosswatch.model.BillingAddress" />
+
+	<on-start>
+		<evaluate expression="checkoutHandler.initflow()" result="flowScope.buyNow" />
+	</on-start>
+
+	<action-state id="getBilling">
+		<evaluate
+			expression="userDetailService.getBillingAddressById(externalContext.sessionMap.userId)"
+			result="flowScope.billingAddress"></evaluate>
+		<transition on="success" to="displayBilling" />
+	</action-state>
+
+	<view-state id="displayBilling" view="DisplayBilling" model="buyNow">
+		<transition on="submit" to="validateBilling" />
+		<transition on="edit" to="editBilling" />
+	</view-state>
+	
+	<action-state id="validateBilling">
+      		<evaluate expression="checkoutHandler.validateBillingAddress(billingAddress, messageContext)" />
+      		<transition on="success" to="getShipping" />
+      		<transition on="failure" to="editBilling" />
+      	</action-state>
       
-      <action-state id="cart">
-      	<evaluate expression="userDetailService.getShippingAddressById(externalContext.sessionMap.userId)" result="flowScope.billingAddress"></evaluate>
-      	<transition on="success" to="start" />
-      </action-state>
-      
-      <view-state id="start" view="DisplayBilling" model="BillingAddress">
-      	<transition on="submit" to="confirmShipping" />
+      <view-state id="editBilling" view="BillingAddress" model="billingAddress">
+      	<transition on="submit" to="validateBilling1" />
       </view-state>
       
-<!--       <view-state id="confirmShipping" view="ConfirmShipping" model="mainClass"> -->
-<!--       <transition on="edit" to="shippingAddress" /> -->
-<!--       <transition on="submit" to="confirmBilling" /> -->
-<!--       </view-state> -->
+      <action-state id="validateBilling1">
+      	<evaluate expression="checkoutHandler.validateBillingAddress(billingAddress, messageContext)" />
+      	<transition on="success" to="displayBilling" />
+      	<transition on="failure" to="editBilling" />
+      </action-state>
       
-<!--       <view-state id="shippingAddress" view="ShippingAddress" model="mainClass"> -->
-<!--       	<transition on = "submit" to="validate" /> -->
-<!--       </view-state> -->
+      <action-state id="getShipping">
+      	<evaluate expression="userDetailService.getShippingAddressById(externalContext.sessionMap.userId)" 
+      	result="flowScope.shippingAddress" />
+      	<transition on="success" to="displayShipping" />
+      </action-state>
       
-<!--       <action-state id="validate"> -->
-<!--       	<evaluate expression="checkoutHandler.validateShippingAddress(shippingAddress, messageContext)"></evaluate> -->
-<!--       	<transition on="success"  to="confirmBilling" /> -->
-<!--       	<transition on="failure" to="shippingAddress" /> -->
-<!--       </action-state> -->
+      <view-state id="displayShipping" view="DisplayShipping" model="shippingAddress">
+      	<transition on="submit" to="validateShipping" />
+      	<transition on="edit" to="editShipping" />
+      </view-state>
       
-<!--       <view-state id="confirmBilling" view="ConfirmBilling" model="mainClass"> -->
-<!--       	<transition on="edit" to="billingAddress" /> -->
-<!--       	<transition on="submit" to="validate" /> -->
-<!--       </view-state> -->
+      
+      <action-state id="validateShipping">
+      	<evaluate expression="checkoutHandler.validateShippingAddress(shippingAddress, messageContext)"></evaluate>
+      	<transition on="success" to="payment" />
+      	<transition on="failure" to="editShipping" />
+      </action-state>
+	
+	<view-state id="editShipping" view="ShippingAddress" model="shippingAddress">
+      	<transition on="submit" to="validateShipping1" />
+      </view-state>
+      
+      <action-state id="validateShipping1">
+      	<evaluate expression="checkoutHandler.validateShippingAddress(shippingAddress, messageContext)" />
+      	<transition on="success" to="payment" />
+      	<transition on="failure" to="editShipping" />
+      </action-state>
+      
+      <view-state id="payment" view="Payment">
+      	<transition to="thankyou" />
+      </view-state>
+	
+		<action-state id="thankyou">
+      	<evaluate expression="cartItemService.updateFlag(externalContext.sessionMap.cartItemId)" 
+      	result="flowScope.cartItem" />
+      	<transition on="success" to="home" />
+      </action-state>
+      
+      <view-state id="home" view="Thankyou">
+      	
+      </view-state>
       
 </flow>

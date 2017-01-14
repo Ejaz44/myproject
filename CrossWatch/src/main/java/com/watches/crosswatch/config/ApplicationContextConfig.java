@@ -4,6 +4,7 @@ package com.watches.crosswatch.config;
 
 import java.util.Properties;
 
+import javax.enterprise.context.BusyConversationException;
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -16,8 +17,10 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.watches.crosswatch.daoimpl.CartItemDAOImpl;
 import com.watches.crosswatch.model.BillingAddress;
 import com.watches.crosswatch.model.Brand;
+import com.watches.crosswatch.model.BuyNow;
 import com.watches.crosswatch.model.Cart;
 import com.watches.crosswatch.model.CartItem;
 import com.watches.crosswatch.model.Category;
@@ -30,6 +33,7 @@ import com.watches.crosswatch.model.Supplier;
 import com.watches.crosswatch.model.User;
 import com.watches.crosswatch.model.UserDetail;
 import com.watches.crosswatch.model.UserRole;
+import com.watches.crosswatch.service.CartItemService;
 
 @Configuration
 @ComponentScan("com.watches.crosswatch")
@@ -112,5 +116,10 @@ public class ApplicationContextConfig
 	public BillingAddress billingAddress()
 	{
 		return new BillingAddress();
+	}
+	@Bean(name="buyNow")
+	public BuyNow buyNow()
+	{
+		return new BuyNow();
 	}
 }

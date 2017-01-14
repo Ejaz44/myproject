@@ -5,15 +5,15 @@ import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Component;
 
 import com.watches.crosswatch.model.BillingAddress;
-import com.watches.crosswatch.model.MainClass;
+import com.watches.crosswatch.model.BuyNow;
 import com.watches.crosswatch.model.ShippingAddress;
 
 @Component
 public class CheckoutHandler 
 {
-	public MainClass initflow()
+	public BuyNow initflow()
 	{
-		return new MainClass();
+		return new BuyNow();
 	}
 	
 	public String validateShippingAddress(ShippingAddress shippingAddress, MessageContext messageContext)
