@@ -111,6 +111,7 @@
 							</ul>
 								<a href="#" class="add-cart item_add">ADD TO CART</a>
 								<a href="buyNow-{{jsonData.productId}}?userId=1" class="add-cart item_add">BUY NOW</a>
+								<a href="wishlist-{{jsonData.productId}}?userId=1" class="add-cart item_add">Add WishList</a>
 							
 						</div>
 					</div>

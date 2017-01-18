@@ -33,6 +33,7 @@ import com.watches.crosswatch.model.Supplier;
 import com.watches.crosswatch.model.User;
 import com.watches.crosswatch.model.UserDetail;
 import com.watches.crosswatch.model.UserRole;
+import com.watches.crosswatch.model.WishList;
 import com.watches.crosswatch.service.CartItemService;
 
 @Configuration
@@ -96,6 +97,8 @@ public class ApplicationContextConfig
 	    sessionBuilder.addAnnotatedClass(BillingAddress.class);
 	    sessionBuilder.addAnnotatedClass(ProductDetail.class);
 	    sessionBuilder.addAnnotatedClass(CartItem.class);
+	    sessionBuilder.addAnnotatedClass(WishList.class);
+	    
 	    
 		return sessionBuilder.buildSessionFactory();
 	}

@@ -32,4 +32,5 @@ app.controller("myCtrl", function($scope)
 </div>
 
 <a href="checkout?userId=${sessionScope.userId}" class="add-cart item_add">Check OUT</a>
+</div>
 <%@ include file="footer.jsp" %>

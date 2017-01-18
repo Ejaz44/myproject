@@ -51,16 +51,13 @@ public class ProductDAOImpl implements ProductDAO
 		
 	}
 
-	public String getJsonProductList() 
+	public Product getJsonProductList() 
 	{
 		Session session = sessionFactory.getCurrentSession();
 		String hql="from Product";
 		@SuppressWarnings("unchecked")
 		List<Product> productList=session.createQuery(hql).getResultList();
-		
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-		String jsonList = gson.toJson(productList);
-		return jsonList;
+		return productList.get(0);
 	}
 	
 	public void updateQuantity(int productId)

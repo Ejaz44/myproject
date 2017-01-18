@@ -36,7 +36,7 @@ public class ProductService
 		productDAOImpl.deleteProduct(productId);
 	}
 	
-	public String getJsonProductList() 
+	public Product getJsonProductList() 
 	{
 		return productDAOImpl.getJsonProductList();
 	}
