@@ -37,4 +37,20 @@ public class CartItemDAOImpl implements CartItemDAO
 		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
 	}
 	
+	public List<CartItem> getCartList(int userId)
+	{
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "from CartItem where userId="+userId;
+		@SuppressWarnings("unchecked")
+		List<CartItem> cartList = session.createQuery(hql).getResultList();
+		return cartList;
+	}
+	
+	public void deleteCartItemById(int cartItemId) 
+	{
+		CartItem cartItemToDelete = new CartItem();
+		cartItemToDelete.setCartItemId(cartItemId);
+		sessionFactory.getCurrentSession().delete(cartItemToDelete);
+	}
+	
 }

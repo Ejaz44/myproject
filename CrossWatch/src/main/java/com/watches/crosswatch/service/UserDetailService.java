@@ -51,4 +51,14 @@ public class UserDetailService
 	{
 		return userDetailDAOImpl.getBillingAddressById(userId);
 	}
+	
+	public int checkUserName(String userName)
+	{
+		return userDetailDAOImpl.checkUserName(userName);
+	}
+	
+	public int checkEmail(String emailId)
+	{
+		return userDetailDAOImpl.checkEmail(emailId);
+	}
 }

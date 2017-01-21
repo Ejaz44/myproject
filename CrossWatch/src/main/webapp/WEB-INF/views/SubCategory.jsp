@@ -92,11 +92,6 @@ tr,th,td {
 <table  id="subCategoryTable" class="table table-hover">
 <tr>
 <th>
-<input id="headerbutton" type="button" ng-click="sortType = 'categoryId'; sortReverse = !sortReverse" value="Category ID">
- <span ng-show="sortType == 'categoryId'" class="fa fa-caret-down"></span>
-</th>
-
-<th>
 <input id="headerbutton" type="button" ng-click="sortType = 'subCategoryId'; sortReverse = !sortReverse" value="SubCategory ID">
  <span ng-show="sortType == 'subCategoryId'" class="fa fa-caret-down"></span>
 </th>
@@ -117,7 +112,6 @@ tr,th,td {
 </tr>
 
 <tr ng-repeat="sclist in jsonData | filter:test | orderBy:sortType:sortReverse">
-<td>{{sclist.categoryId}}</td>
 <td>{{sclist.subCategoryId}}</td>
 <td>{{sclist.subCategoryName}}</td>
 <td>{{sclist.subCategoryDescription}}</td>

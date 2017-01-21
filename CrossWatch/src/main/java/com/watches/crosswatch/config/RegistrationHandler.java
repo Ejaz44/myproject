@@ -33,6 +33,19 @@ public class RegistrationHandler
 	{
 		String status="success";
 		
+		int countUser = userDetailService.checkUserName(userDetail.getUserName());
+		int countEmail = userDetailService.checkEmail(userDetail.getEmailId());
+		
+		if(countUser == 1)
+		{
+			messageContext.addMessage(new MessageBuilder().error().source("userName").defaultText("UserName is Already Used").build());
+			status="failure";
+		}
+		if(countEmail == 1)
+		{
+			messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("Email Id is already Used").build());
+			status="failure";
+		}
 		if(userDetail.getUserName().isEmpty())
 		{
 			messageContext.addMessage(new MessageBuilder().error().source("userName").defaultText("Username cannot be Empty").build());

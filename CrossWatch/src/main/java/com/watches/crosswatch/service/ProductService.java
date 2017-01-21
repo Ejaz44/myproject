@@ -36,13 +36,18 @@ public class ProductService
 		productDAOImpl.deleteProduct(productId);
 	}
 	
-	public Product getJsonProductList() 
+	public String getJsonProductList() 
 	{
 		return productDAOImpl.getJsonProductList();
 	}
 	
-	public void updateQuantity(int productId)
+//	public void updateQuantity(int productId)
+//	{
+//		productDAOImpl.updateQuantity(productId);
+//	}
+	
+	public void updateQuantity1(int productId, int quantity)
 	{
-		productDAOImpl.updateQuantity(productId);
+		productDAOImpl.updateQuantity1(productId, quantity);
 	}
 }

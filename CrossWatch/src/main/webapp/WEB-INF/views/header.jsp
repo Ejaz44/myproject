@@ -54,16 +54,17 @@ $(document).ready(function(){$(".memenu").memenu();});
 <!-- 				</div> -->
 <!-- 				<div class="clearfix"></div> -->
 				<ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicons glyphicons-shopping-bag"></span>Go to Cart</a></li>
       
       <c:if test="${empty pageContext.request.userPrincipal}">
       <li><a href="userLogin"><img src="resources/images/account .png" /> Sign in</a></li>
       <li><a href="reg"><span class=""></span> Registration</a></li>
+      <li><a href="AboutUS">AboutUs</a></li>
 	  </c:if>
 	  
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
       <li><a href="logout"><span class=""></span> Sign out</a></li>
       <li><a href=""><img src="resources/images/account .png" />${pageContext.request.userPrincipal.name}</a></li>
+      <li><a href="addCart-{{cartItemId}}">Go To Cart</a></li>
 	  </c:if>
       
     </ul>
@@ -85,7 +86,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 				<div class="top-nav">
 					<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
 						<c:forEach items="${categoryListDrop}" var="category">
-						<li class="grid"><a href="#">${category.categoryName}</a>
+						<li class="grid"><a href="productDisplay">${category.categoryName}</a>
 							<div class="mepanel">
 								<div class="row">
 								<div class="col1 me-one">

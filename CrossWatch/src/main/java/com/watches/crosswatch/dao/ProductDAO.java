@@ -13,4 +13,6 @@ public interface ProductDAO
 	public Product getProductById(int productId);
 	
 	public void deleteProduct(int productId);
+	
+	public String getJsonProductList();
 }

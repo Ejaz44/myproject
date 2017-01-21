@@ -1,6 +1,7 @@
 <%@ include file="header.jsp" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <title>View Product</title>
@@ -41,6 +42,17 @@
 	
 	});
 </script>		
+<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="/CrossWatch/">Home</a></li>
+					<li class="active">View Product</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
 <div ng-app="app" ng-controller="myCtrl">
 <div class="single contact">
 		<div class="container">
@@ -50,14 +62,14 @@
 					<div class="col-md-5 single-top-left">	
 						<div class="flexslider">
 							  <ul class="slides">
-								<li data-thumb="resources/images/casio small1.jpg">
-									<div class="thumb-image"> <img src="resources/images/casio big1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								<li data-thumb="resources/images/{{jsonData.productId}}-1.jpg">
+									<div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li>
-								<li data-thumb="resources/images/casio small2.jpg">
-									 <div class="thumb-image"> <img src="resources/images/casio big2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								<li data-thumb="resources/images/{{jsonData.productId}}-2.jpg">
+									 <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li>
-								<li data-thumb="resources/images/casio small3.jpg">
-								   <div class="thumb-image"> <img src="resources/images/casio big3.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								<li data-thumb="resources/images/{{jsonData.productId}}-1.jpg">
+								   <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li> 
 							  </ul>
 						</div>
@@ -108,11 +120,17 @@
 								<span class="women1">: {{jsonData.productColor}}</span></li>
 								<li><span>Size</span>
 								<span class="women1">: {{jsonData.productSize}}</span></li>
-							</ul>
-								<a href="#" class="add-cart item_add">ADD TO CART</a>
+							
+							</ul>	
+								<form:form modelAttribute="cartItem" action="/CrossWatch/addtocart-${sessionScope.productId}?userId=1">
+									<div>
+										<form:input type="number" path="productQuantity" name="Quantity" value="1" />
+									</div>
+							
+							<input type="submit" value="addtocart" />
 								<a href="buyNow-{{jsonData.productId}}?userId=1" class="add-cart item_add">BUY NOW</a>
 								<a href="wishlist-{{jsonData.productId}}?userId=1" class="add-cart item_add">Add WishList</a>
-							
+							</form:form>
 						</div>
 					</div>
 					<div class="clearfix"> </div>

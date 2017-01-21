@@ -93,7 +93,7 @@ function toggle()
 <input type="submit" value="Add product" />
 
 <input class="address button" type="button" id="buttonToggle" value="Show List" onclick="toggle();"/>
-<form:input type="file" path="productImage" class="address file" multiple ="multiple"/>
+<form:input type="file" path="productImage" class="address file" multiple ="multiple" />
 </c:if>
 </div>
 </div>
@@ -102,7 +102,7 @@ function toggle()
 		</div>
 	</div>
 
-<table id="productTable" class="table table-hover">
+<table id="productTable" Class="table-responsive">
 <tr>
 <th>
 <input id="headerbutton" type="button" ng-click="sortType = 'categoryId'; sortReverse = !sortReverse" value="Category ID">

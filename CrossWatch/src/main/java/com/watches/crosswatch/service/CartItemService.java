@@ -1,5 +1,7 @@
 package com.watches.crosswatch.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,5 +29,15 @@ public class CartItemService
 	public void updateFlag(int cartItemId)
 	{
 		cartItemDAOImpl.updateFlag(cartItemId);
+	}
+	
+	public List<CartItem> getCartList(int userId)
+	{
+		return cartItemDAOImpl.getCartList(userId);
+	}
+	
+	public void deleteCartItemById(int cartItemId)
+	{
+		cartItemDAOImpl.deleteCartItemById(cartItemId);
 	}
 }

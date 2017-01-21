@@ -44,6 +44,7 @@
 	<!--about-starts-->
 	
 	<div ng-app="app" ng-controller="myCtrl">
+	<div class="product">
 	<div class="about"> 
 		<div class="container">
 			<div class="about-top grid-1">
@@ -80,38 +81,40 @@
 	</div>
 	<!--about-end-->
 	<!--product-starts-->
-	<div ng-repeat="p in jsonData">
 	<div class="product" > 
 		<div class="container">
 			<div class="product-top" >
-				<div class="product-one" >
-					<div class="col-md-3 product-left" >
-						<div class="product-main simpleCart_shelfItem">
-							<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/casio index.jpg" alt="" /></a>
+					<div class="col-md-3 product-left" ng-repeat="p in jsonData">
+					<div class="product-main simpleCart_shelfItem">
+							<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{p.productId}}-1.jpg" alt="product 1" /></a>
 							<div class="product-bottom">
 								<h3>{{p.productName}}</h3>
 								<p>Explore Now</p>
-								<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">{{p.productPrice}}</span></h4>
+								<h4><a class="item_add" href="viewProduct-{{p.productId}}"><i></i></a> <span class=" item_price">{{p.productPrice}}</span></h4>
 							</div>
 							<div class="srch">
-								<span>-50%</span>
+								<span>-{{p.productDiscount}}%</span>
 							</div>
-						</div>
 					</div>
-									<div class="clearfix"></div>
-				</div>					
+					</div>
+					
+							<div class="clearfix"></div>
 			</div>
+				<div class="product-one">
+							<div class="clearfix"></div>
+				</div>
 		</div>
 	</div>
-	</div>
-	</div>
-	
-	
-	<script>
+</div>
+
+<script>
 var app=angular.module("app",[]);
 app.controller("myCtrl", function($scope)
 	{
 		$scope.jsonData=${productList};
 	});
 </script>
+
+	
+	
 <%@ include file="footer.jsp" %>

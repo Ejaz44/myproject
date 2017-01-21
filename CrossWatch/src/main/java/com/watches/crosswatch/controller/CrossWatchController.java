@@ -30,9 +30,8 @@ public class CrossWatchController {
 		model.addAttribute("categoryListDrop", categoryService.getList());
 		model.addAttribute("brandListDrop", brandService.getList());
 		
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-		String productList = gson.toJson(productService.getJsonProductList());
-		model.addAttribute("productList", productList);
+		
+		model.addAttribute("productList", productService.getJsonProductList());
 		return "index";
 	}
 	
@@ -41,7 +40,6 @@ public class CrossWatchController {
 	{
 		return "AboutUS";
 	}
-	
 //	@RequestMapping("/viewProduct")
 //	public String viewProduct(Model model)
 //	{
