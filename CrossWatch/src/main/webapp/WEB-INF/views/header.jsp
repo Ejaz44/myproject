@@ -19,6 +19,7 @@
 <script src="resources/jq/simpleCart.min.js"> </script>
 <link href="resources/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="resources/jq/memenu.js"></script>
+<script type="text/javascript" src="resources/jq/jquery.autocomplete.min.js"></script>
 <script>
 $(document).ready(function(){$(".memenu").memenu();});
 </script>	
@@ -84,7 +85,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 			<div class="header">
 				<div class="col-md-9 header-left">
 				<div class="top-nav">
-					<ul class="memenu skyblue"><li class="active"><a href="index.html">Home</a></li>
+					<ul class="memenu skyblue"><li class="active"><a href="/CrossWatch/">Home</a></li>
 						<c:forEach items="${categoryListDrop}" var="category">
 						<li class="grid"><a href="productDisplay">${category.categoryName}</a>
 							<div class="mepanel">
@@ -154,11 +155,35 @@ $(document).ready(function(){$(".memenu").memenu();});
 			</div>
 			<div class="col-md-3 header-right"> 
 				<div class="search-bar">
-					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-					<input type="submit" value="">
+					<input type="text" value="Search" id="w-input-search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<input type="submit" id="button-id" href="productDisplay">
 				</div>
 			</div>
 			<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
+<script>
+  $(document).ready(function() {
+
+	$('#w-input-search').autocomplete({
+		serviceUrl: '${pageContext.request.contextPath}/getTags',
+		paramName: "tagName",
+		delimiter: ",",
+	   transformResult: function(response) {
+
+		return {
+		  //must convert json to javascript object before process
+		  suggestions: $.map($.parseJSON(response), function(item) {
+
+		      return { value: item.productName, data: item.productId };
+		   })
+
+		 };
+
+            }
+
+	 });
+
+  });
+  </script>

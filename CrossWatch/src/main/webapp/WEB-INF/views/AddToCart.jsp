@@ -29,15 +29,17 @@ app.controller("myCtrl", function($scope)
 <th>Item</th>
 <th>Product Name</th>
 <th>Quantity</th>
-<th>Price</th>
+<th>Unit Price</th>
+<th>Total Price</th>
 <th>Delete</th>
 </tr>
 
 <tr ng-repeat="p in jsonData">
-<td><a href="#"></a><img src="resources/images/{{p.productId}}.jpg" /></td>
+<td><a href="#"></a><img src="resources/images/{{p.productId}}-0.jpg" style="height: 200px"/></td>
 <td>{{p.productName}}</td>
 <td>{{p.productQuantity}}</td>
 <td>{{p.productPrice}}</td>
+<td>{{p.productPrice*p.productQuantity}}</td>
 <td><a href="deleteCartItem-{{p.cartItemId}}">delete</a></td>
 </tr>
 </table>

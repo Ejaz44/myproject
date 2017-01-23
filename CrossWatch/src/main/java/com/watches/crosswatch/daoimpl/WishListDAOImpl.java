@@ -36,5 +36,4 @@ public class WishListDAOImpl implements WishListDAO
 		wishListToDelete.setWishListId(wishListId);
 		sessionFactory.getCurrentSession().delete(wishListToDelete);
 	}
-
 }

@@ -76,6 +76,8 @@ function toggle()
 <form:errors path = "productPrice" /><br>
 <form:input path="productDiscount" placeholder="Enter the discount on product"/>
  <form:errors path = "productDiscount" /><br>
+ <form:input path="productColor" placeholder="Enter the color for the product"/>
+ <form:errors path="productColor" /><br/>
  <form:select path="category.categoryName" items="${categoryList}"  itemValue="categoryName" itemLabel="categoryName"/>
  <form:select path="subCategory.subCategoryName" items="${subCategoryList}"  itemValue="subCategoryName" itemLabel="subCategoryName"/>
  <form:select path="supplier.supplierName" items="${supplierList}"  itemValue="supplierName" itemLabel="supplierName"/>

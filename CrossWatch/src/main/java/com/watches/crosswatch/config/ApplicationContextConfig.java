@@ -24,6 +24,7 @@ import com.watches.crosswatch.model.BuyNow;
 import com.watches.crosswatch.model.Cart;
 import com.watches.crosswatch.model.CartItem;
 import com.watches.crosswatch.model.Category;
+import com.watches.crosswatch.model.Order;
 import com.watches.crosswatch.model.Product;
 import com.watches.crosswatch.model.ProductDetail;
 import com.watches.crosswatch.model.Role;
@@ -98,7 +99,6 @@ public class ApplicationContextConfig
 	    sessionBuilder.addAnnotatedClass(ProductDetail.class);
 	    sessionBuilder.addAnnotatedClass(CartItem.class);
 	    sessionBuilder.addAnnotatedClass(WishList.class);
-	    
 	    
 		return sessionBuilder.buildSessionFactory();
 	}

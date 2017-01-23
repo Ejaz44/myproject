@@ -19,22 +19,20 @@
 					<div class="product-one">
 						<div class="col-md-4 product-left p-left" ng-repeat="pd in jsonData">
 							<div class="product-main simpleCart_shelfItem">
-								<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{pd.productId}}-1.jpg" alt="" /></a>
+								<a href="viewProduct-{{pd.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{pd.productId}}-0.jpg" alt="" /></a>
 								<div class="product-bottom">
 									<h3>{{pd.productName}}</h3>
 									<p>Explore Now</p>
 									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">{{pd.productPrice}}</span></h4>
 								</div>
 								<div class="srch srch1">
-									<span>{{pd.productDiscount}}</span>
+									<span>-{{pd.productDiscount}}%</span>
 								</div>
+						<div class="clearfix"></div>
 							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="product-one">
 						
-						<div class="clearfix"></div>
+						</div>
+						
 					</div>	
 				</div>	
 				<div class="col-md-3 prdt-right">
@@ -55,13 +53,15 @@
 						<section  class="sky-form">
 							<h4>Brand</h4>
 							<div class="row1 row2 scroll-pane">
-								<div class="col col-4">
+<!-- 								<div class="col col-4"> -->
+								<ul>
 								<c:forEach items="${categoryListDrop}" var="category">
-								
-											<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>${category.categoryName}</label>							
-								
+								<li>
+											${category.categoryName}							
+								</li>
 								</c:forEach>
-								</div>
+								</ul>
+<!-- 								</div> -->
 							</div>
 						</section>
 						<section class="sky-form">

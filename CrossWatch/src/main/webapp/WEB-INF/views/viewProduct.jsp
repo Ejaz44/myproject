@@ -62,14 +62,14 @@
 					<div class="col-md-5 single-top-left">	
 						<div class="flexslider">
 							  <ul class="slides">
+								<li data-thumb="resources/images/{{jsonData.productId}}-0.jpg">
+									<div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-0.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								</li>
 								<li data-thumb="resources/images/{{jsonData.productId}}-1.jpg">
-									<div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+									 <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li>
 								<li data-thumb="resources/images/{{jsonData.productId}}-2.jpg">
-									 <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
-								</li>
-								<li data-thumb="resources/images/{{jsonData.productId}}-1.jpg">
-								   <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+								   <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-2.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
 								</li> 
 							  </ul>
 						</div>
@@ -112,14 +112,24 @@
 								
 						</div>
 							<ul class="tag-men">
-								<li><span>Category</span>
-								<span class="women1">: {{jsonData.categoryName}}</span></li>
-								<li><span>Discount</span>
-								<span class="women1">: {{jsonData.productDiscount}}</span></li>
-								<li><span>Color</span>
-								<span class="women1">: {{jsonData.productColor}}</span></li>
-								<li><span>Size</span>
-								<span class="women1">: {{jsonData.productSize}}</span></li>
+									<ol>
+										<li><h4>Category: </h4>
+										<h6>{{jsonData.categoryName}}</h6></li>
+									</ol>
+									<ol>
+									<li><h4>Discount: </h4>
+									<h6>{{jsonData.productDiscount}}</h6></li>
+									</ol>
+									<li><h4>Color: </h4>
+									<h6>{{jsonData.productColor}}</h6></li>
+<!-- 								<li><span>Category</span> -->
+<!-- 								<span class="women1">: {{jsonData.categoryName}}</span></li> -->
+<!-- 								<li><span>Discount</span> -->
+<!-- 								<span class="women1">: {{jsonData.productDiscount}}</span></li> -->
+<!-- 								<li><span>Color</span> -->
+<!-- 								<span class="women1">: {{jsonData.productColor}}</span></li> -->
+<!-- 								<li><span>Size</span> -->
+<!-- 								<span class="women1">: {{jsonData.productSize}}</span></li> -->
 							
 							</ul>	
 								<form:form modelAttribute="cartItem" action="/CrossWatch/addtocart-${sessionScope.productId}?userId=1">
