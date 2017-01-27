@@ -33,7 +33,7 @@ app.controller("myCtrl", function($scope)
 </div>
 <div>
 <a href="/CrossWatch/" class="add-cart item_add">CONTINUE SHOPPING</a>
-<a href="" class="add-cart item_add">ADD TO CART</a>
+<a href="addtocart-{{p.productId}}" class="add-cart item_add">ADD TO CART</a>
 </div>
 </div>
 <%@ include file="footer.jsp" %>

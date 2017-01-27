@@ -76,6 +76,23 @@ public class CartItemController
 		return "cartList";
 	}
 	
+	@RequestMapping(value = "order-{cartItemId}")
+	public String orderList(HttpSession httpSession, Model model)
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String userName = authentication.getName();
+		
+		int userId = userDetailService.getUserByName(userName).getUserId();
+		httpSession.setAttribute("userId", userId);
+		int cartItemId = (Integer) httpSession.getAttribute("cartItemId");
+		
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String order = gson.toJson(cartItemService.getCartItemById(cartItemId));
+		model.addAttribute("orderList", order);
+		
+		return "orderList";
+	}
+	
 	@RequestMapping("checkout")
 	public String checkout(@RequestParam("userId") int userId, HttpSession httpSession)
 	{

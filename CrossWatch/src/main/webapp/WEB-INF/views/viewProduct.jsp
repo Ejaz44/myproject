@@ -63,7 +63,7 @@
 						<div class="flexslider">
 							  <ul class="slides">
 								<li data-thumb="resources/images/{{jsonData.productId}}-0.jpg">
-									<div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-0.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+									<div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-0.jpg" data-imagezoom="true" class="img-responsive" alt="" style='object-fit: contain'/> </div>
 								</li>
 								<li data-thumb="resources/images/{{jsonData.productId}}-1.jpg">
 									 <div class="thumb-image"> <img src="resources/images/{{jsonData.productId}}-1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
@@ -136,10 +136,15 @@
 									<div>
 										<form:input type="number" path="productQuantity" name="Quantity" value="1" />
 									</div>
+									<br/>
 							
-							<input type="submit" value="addtocart" />
-								<a href="buyNow-{{jsonData.productId}}?userId=1" class="add-cart item_add">BUY NOW</a>
-								<a href="wishlist-{{jsonData.productId}}?userId=1" class="add-cart item_add">Add WishList</a>
+							<div class="address submit">
+							<a href="buyNow-{{jsonData.productId}}?userId=1" class="add-cart item_add">BUY NOW</a>
+							<input type="submit"  value="addtocart" />
+							<a href="wishlist-{{jsonData.productId}}?userId=1" class="add-cart item_add">Add WishList</a>
+							</div>
+							
+								
 							</form:form>
 						</div>
 					</div>
@@ -157,7 +162,7 @@
 					    <li class="subitem2"><a href="AboutUS">{{jsonData.additionalInfo}}</a></li>
 					</ul>
 				</li>
-				<li class="item3"><a href="#"><img src="resources/images/arrow.png" alt="">Reviews (10)</a>
+				<li class="item3"><a href="#"><img src="resources/images/arrow.png" alt="">Reviews</a>
 					<ul>
 						<li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
 					</ul>
@@ -168,11 +173,11 @@
 					<div class="product-one">
 						<div class="col-md-4 product-left p-left"> 
 							<div class="product-main simpleCart_shelfItem">
-								<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/p-1.png" alt="" /></a>
+								<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/4-0.jpg" alt="" /></a>
 								<div class="product-bottom">
-									<h3>Smart Watches</h3>
+									<h3>Rolex</h3>
 									<p>Explore Now</p>
-									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">Rs 3000</span></h4>
 								</div>
 								<div class="srch">
 									<span>-50%</span>
@@ -181,11 +186,11 @@
 						</div>
 						<div class="col-md-4 product-left p-left"> 
 							<div class="product-main simpleCart_shelfItem">
-								<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/p-2.png" alt="" /></a>
+								<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/7-0.jpg" alt="" /></a>
 								<div class="product-bottom">
-									<h3>Smart Watches</h3>
+									<h3>Casio G-Shock</h3>
 									<p>Explore Now</p>
-									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">Rs 5000</span></h4>
 								</div>
 								<div class="srch">
 									<span>-50%</span>
@@ -194,11 +199,11 @@
 						</div>
 						<div class="col-md-4 product-left p-left"> 
 							<div class="product-main simpleCart_shelfItem">
-								<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="resources/images/p-3.png" alt="" /></a>
+								<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/8-0.jpg" alt="" /></a>
 								<div class="product-bottom">
-									<h3>Smart Watches</h3>
+									<h3>Hublot</h3>
 									<p>Explore Now</p>
-									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
+									<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">Rs 50000</span></h4>
 								</div>
 								<div class="srch">
 									<span>-50%</span>

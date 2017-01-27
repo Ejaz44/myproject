@@ -17,6 +17,7 @@
 //import com.watches.crosswatch.model.CartItem;
 //import com.watches.crosswatch.model.Order;
 //import com.watches.crosswatch.model.WishList;
+//import com.watches.crosswatch.service.CartItemService;
 //import com.watches.crosswatch.service.OrderService;
 //import com.watches.crosswatch.service.ProductService;
 //import com.watches.crosswatch.service.UserDetailService;
@@ -25,7 +26,7 @@
 //public class OrderController 
 //{
 //	@Autowired
-//	OrderService orderService;
+//	CartItemService cartItemService;
 //	
 //	@Autowired
 //	UserDetailService userDetailService;
@@ -36,50 +37,18 @@
 //	@Autowired
 //	CartItem cartItem;
 //
-//	
-//	@RequestMapping(value = "order-{productId}")
-//	public String order(@PathVariable("productId") int productId, @ModelAttribute("order") Order order ,Model model, @RequestParam("userId") int userId, HttpSession httpSession)
-//	{
-//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//		String userName = authentication.getName();
-//		userId = userDetailService.getUserByName(userName).getUserId();
-//		order.setCartId(userId);
-//		order.setUserId(userId);
-//		order.setProductId(productId);
-//		
-//		String productName = productService.getProductById(productId).getProductName();
-//		order.setProductName(productName);
-//		
-//		int productPrice = productService.getProductById(productId).getProductPrice();
-//		order.setProductPrice(productPrice);
-//		order.setProductQuantity(cartItem.getProductQuantity());
-//		
-//		orderService.addOrder(order);
-//		
-//		return "redirect:/order";
-//	}
-//	
-//	@RequestMapping(value = "order")
-//	public String orderList(Model model, HttpSession httpSession)
+//	@RequestMapping("order")
+//	public String orderList(HttpSession httpSession)
 //	{
 //		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //		String userName = authentication.getName();
 //		
-//		userDetailService.getUserByName(userName);
 //		int userId = userDetailService.getUserByName(userName).getUserId();
 //		httpSession.setAttribute("userId", userId);
+//		int cartItemId = httpSession.getAttribute("cartItemId");
 //		
 //		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
-//		String orderList = gson.toJson(orderService.getOrderList());
-//		model.addAttribute("orderList", orderList);
-//		
-//		return "Order";
+//		String order = gson.toJson(cartItemService.getCartItemById(cartItemId));
 //	}
 //	
-//	@RequestMapping(value = "deleteOrder-{orderId}")
-//	public String deleteCategory(@PathVariable("orderId") int orderId)
-//	{
-//		orderService.deleteOrder(orderId);
-//		return "redirect:/order";
-//	}
 //}

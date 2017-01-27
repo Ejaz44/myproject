@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Thank you for Shopping
+	<center><h2>Thank you for Shopping</h2></center>
+	<center><h4>Click on the <a href="/CrossWatch/">Home</a> to go to Home page</h4></center>
 </body>
 </html>

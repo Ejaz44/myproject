@@ -1,14 +1,3 @@
-/*
- * jQuery FlexSlider v2.4.0
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 and later license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- * 
- */
 /* ====================================================================================================================
  * FONT-FACE
  * ====================================================================================================================*/
@@ -197,7 +186,7 @@ li.clone {
 }
 .flex-control-thumbs img {
   width: 100%;
-  height: 150px;
+  height: 125px;
   display: block;
   opacity: .7;
   cursor: pointer;

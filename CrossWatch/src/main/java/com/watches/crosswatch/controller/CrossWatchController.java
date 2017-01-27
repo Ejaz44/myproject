@@ -27,8 +27,6 @@ public class CrossWatchController {
 	public String hello(Model model) 
 	{
 		model.addAttribute("category", new Category());
-		model.addAttribute("categoryListDrop", categoryService.getList());
-		model.addAttribute("brandListDrop", brandService.getList());
 		
 		
 		model.addAttribute("productList", productService.getJsonProductList());
@@ -39,6 +37,30 @@ public class CrossWatchController {
 	public String aboutUs(Model model)
 	{
 		return "AboutUS";
+	}
+	
+	@RequestMapping("/ContactUs")
+	public String contactUs(Model model)
+	{
+		return "ContactUs";
+	}
+	
+	@RequestMapping("/payment")
+	public String payment(Model model)
+	{
+		return "Payment";
+	}
+	
+	@RequestMapping("/thankyou")
+	public String thankyou(Model model)
+	{
+		return "Thankyou";
+	}
+	
+	@RequestMapping("/emailSubscription")
+	public String email(Model model)
+	{
+		return "emailSubscription";
 	}
 //	@RequestMapping("/viewProduct")
 //	public String viewProduct(Model model)

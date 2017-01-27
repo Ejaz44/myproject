@@ -40,31 +40,19 @@ $(document).ready(function(){$(".memenu").memenu();});
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
+					<img src="resources/images/logo.jpg" style="height: 50px; width: 250px;" />
 				</div>
-<!-- 				<div class="col-md-6 top-header-left"> -->
-<!-- 					<div class="cart box_1"> -->
-<!-- 						<a href="checkout.html"> -->
-<!-- 							 <div class="total"> -->
-<!-- 								<span class="simpleCart_total"></span></div> -->
-<!-- 								<img src="images/cart-1.png" alt="" /> -->
-<!-- 						</a> -->
-<!-- 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p> -->
-<!-- 						<div class="clearfix"> </div> -->
-<!-- 					</div> -->
-					
-<!-- 				</div> -->
-<!-- 				<div class="clearfix"></div> -->
 				<ul class="nav navbar-nav navbar-right">
       
       <c:if test="${empty pageContext.request.userPrincipal}">
       <li><a href="userLogin"><img src="resources/images/account .png" /> Sign in</a></li>
       <li><a href="reg"><span class=""></span> Registration</a></li>
-      <li><a href="AboutUS">AboutUs</a></li>
+      <li><a href="ContactUs">Contact Us</a></li>
 	  </c:if>
 	  
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
       <li><a href="logout"><span class=""></span> Sign out</a></li>
-      <li><a href=""><img src="resources/images/account .png" />${pageContext.request.userPrincipal.name}</a></li>
+   	  <li><a href="">${pageContext.request.userPrincipal.name}</a></li>
       <li><a href="addCart-{{cartItemId}}">Go To Cart</a></li>
 	  </c:if>
       
@@ -76,7 +64,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 	<!--top-header-->
 	<!--start-logo-->
 	<div class="logo">
-		<a href="/CrossWatch/"><h1>Cross Watches</h1></a>
+		<center><a href="/CrossWatch/"><h1>Cross Watches</h1></a></center>
 	</div>
 	<!--start-logo-->
 	<!--bottom-header-->
@@ -105,7 +93,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 										<h4>Category</h4>
 										<ul>
 										<c:forEach items="${category.subCategory}" var="subCategory">
-											<li><a href="#">${subCategory.subCategoryName}</a></li>
+											<li><a href="productDisplay?search=${subCategory.subCategoryName}">${subCategory.subCategoryName}</a></li>
 										</c:forEach>
 										</ul>
 									</div>
@@ -113,8 +101,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 										<h4>Brands</h4>
 											<c:forEach items="${brandListDrop}" var="brand">
 											<ul>
-											<li>${brand.brandName}
-											</li>
+											<li><a href="#">${brand.brandName}</a></li>
 											</ul>
 											</c:forEach>
 									</div>
@@ -146,6 +133,8 @@ $(document).ready(function(){$(".memenu").memenu();});
 							</div>
 						</li>
 						</c:forEach>
+				
+				
 						<c:if test="${pageContext.request.userPrincipal.name}">
 			
 						</c:if>
@@ -156,7 +145,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 			<div class="col-md-3 header-right"> 
 				<div class="search-bar">
 					<input type="text" value="Search" id="w-input-search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-					<input type="submit" id="button-id" href="productDisplay">
+					<input type="submit" id="button-id" >
 				</div>
 			</div>
 			<div class="clearfix"> </div>

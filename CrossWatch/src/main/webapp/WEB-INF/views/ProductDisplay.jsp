@@ -12,12 +12,13 @@
 		</div>
 	</div>
 
+<label>Search BOX: <input type="text" ng-model="searchKeyword"></label>
 <div class="prdt"> 
 		<div class="container">
 			<div class="prdt-top">
 				<div class="col-md-9 prdt-left">
 					<div class="product-one">
-						<div class="col-md-4 product-left p-left" ng-repeat="pd in jsonData">
+						<div class="col-md-4 product-left p-left" ng-repeat="pd in jsonData| filter:searchKeyword">
 							<div class="product-main simpleCart_shelfItem">
 								<a href="viewProduct-{{pd.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{pd.productId}}-0.jpg" alt="" /></a>
 								<div class="product-bottom">
@@ -87,8 +88,9 @@
 	</div>
 	<script>
 var app=angular.module("app",[]);
-app.controller("myCtrl", function($scope)
+app.controller("myCtrl", function($scope,$http,$location)
 	{
+		$scope.searchKeyword=location.search.substr(8);
 		$scope.jsonData = ${productList};
 	});
 </script>

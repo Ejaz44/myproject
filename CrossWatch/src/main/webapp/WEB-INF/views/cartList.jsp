@@ -15,14 +15,14 @@ app.controller("myCtrl", function($scope)
   <h2>Cart List</h2>            
   <table class="table">
 <tr>
-<th>Product ID</th>
+<th>Product</th>
 <th>Product Name</th>
 <th>Quantity</th>
 <th>Price</th>
 </tr>
 
 <tr>
-<td>{{jsonData.productId}}</td>
+<td><a href="viewProduct-{{jsonData.productId}}"></a><img src="resources/images/{{jsonData.productId}}-0.jpg" style="height: 200px" /></td>
 <td>{{jsonData.productName}}</td>
 <td>{{jsonData.productQuantity}}</td>
 <td>{{jsonData.productPrice}}</td>

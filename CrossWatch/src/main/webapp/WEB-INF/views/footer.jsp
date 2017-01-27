@@ -15,14 +15,14 @@
 						<li><a href="#"><p>Specials</p></a></li>
 						<li><a href="#"><p>New Products</p></a></li>
 						<li><a href="AboutUS"><p>Our Stores</p></a></li>
-						<li><a href="contact.html"><p>Contact Us</p></a></li>
+						<li><a href="ContactUs"><p>Contact Us</p></a></li>
 						<li><a href="#"><p>Top Sellers</p></a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 infor-left">
 					<h3>My Account</h3>
 					<ul>
-						<li><a href="account.html"><p>My Account</p></a></li>
+						<li><a href="userLogin"><p>My Account</p></a></li>
 						<li><a href="#"><p>My Credit slips</p></a></li>
 						<li><a href="#"><p>My Merchandise returns</p></a></li>
 						<li><a href="#"><p>My Personal info</p></a></li>
@@ -49,7 +49,7 @@
 				<div class="col-md-6 footer-left">
 					<form>
 						<input type="text" value="Enter Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email';}">
-						<input type="submit" value="Subscribe">
+						<input type="submit" value="Subscribe" href="emailSubscription">
 					</form>
 				</div>
 				<div class="col-md-6 footer-right">					
