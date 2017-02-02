@@ -78,7 +78,7 @@ function toggle()
  <form:errors path = "productDiscount" /><br>
  <form:input path="productColor" placeholder="Enter the color for the product"/>
  <form:errors path="productColor" /><br/>
- <form:select path="category.categoryName" items="${categoryList}"  itemValue="categoryName" itemLabel="categoryName"/>
+ <form:select path="category.categoryName" items="${categoryList}"  itemValue="categoryName" itemLabel="categoryName" />
  <form:select path="subCategory.subCategoryName" items="${subCategoryList}"  itemValue="subCategoryName" itemLabel="subCategoryName"/>
  <form:select path="supplier.supplierName" items="${supplierList}"  itemValue="supplierName" itemLabel="supplierName"/>
  <form:select path="brand.brandName" items="${brandList}"  itemValue="brandName" itemLabel="brandName"/>
@@ -106,26 +106,6 @@ function toggle()
 
 <table id="productTable" Class="table-responsive">
 <tr>
-<th>
-<input id="headerbutton" type="button" ng-click="sortType = 'categoryId'; sortReverse = !sortReverse" value="Category ID">
- <span ng-show="sortType == 'categoryId'" class="fa fa-caret-down"></span>
-</th>
-
-<th>
-<input id="headerbutton" type="button" ng-click="sortType = 'subCategoryId'; sortReverse = !sortReverse" value="SubCategory ID">
- <span ng-show="sortType == 'subCategoryId'" class="fa fa-caret-down"></span>
-</th>
-
-<th>
-<input id="headerbutton" type="button" ng-click="sortType = 'supplierId'; sortReverse = !sortReverse" value="Supplier ID">
- <span ng-show="sortType == 'supplierId'" class="fa fa-caret-down"></span>
-</th>
-
-<th>
-<input id="headerbutton" type="button" ng-click="sortType = 'brandId'; sortReverse = !sortReverse" value="Brand ID">
- <span ng-show="sortType == 'brandId'" class="fa fa-caret-down"></span>
-</th>
-
 <th>
 <input id="headerbutton" type="button" ng-click="sortType = 'productId'; sortReverse = !sortReverse" value="Product ID">
  <span ng-show="sortType == 'productId'" class="fa fa-caret-down"></span>
@@ -161,10 +141,6 @@ function toggle()
 </tr>
 
 <tr ng-repeat="plist in jsonData | filter:test | orderBy:sortType:sortReverse">
-<td>{{plist.categoryId}}</td>
-<td>{{plist.subCategoryId}}</td>
-<td>{{plist.supplierId}}</td>
-<td>{{plist.brandId}}</td>
 <td>{{plist.productId}}</td>
 <td>{{plist.productName}}</td>
 <td>{{plist.productDescription}}</td>

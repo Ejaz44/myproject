@@ -40,7 +40,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
-					<img src="resources/images/logo.jpg" style="height: 50px; width: 250px;" />
+					<a href="/CrossWatch/"><img src="resources/images/logo.jpg" style="height: 50px; width: 250px;" /></a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
       
@@ -143,7 +143,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-md-3 header-right"> 
-				<div class="search-bar">
+				<div class="search-bar" action="displayProduct?search=${search}">
 					<input type="text" value="Search" id="w-input-search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 					<input type="submit" id="button-id" >
 				</div>

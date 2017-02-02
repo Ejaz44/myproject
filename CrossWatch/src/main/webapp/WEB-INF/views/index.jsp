@@ -59,7 +59,7 @@
 				</div>
 				<div class="col-md-4 about-left">
 					<figure class="effect-bubba">
-						<img class="img-responsive" src="resources/images/abt-2.jpg" alt=""/>
+						<a href="productDisplay"> <img class="img-responsive" src="resources/images/abt-2.jpg" alt=""/></a>
 						<figcaption>
 							<h4>Breitling</h4>
 							<p>It was the Breitling Chronomat B01 with the in-house made and designed caliber 01 movement</p>	
@@ -77,36 +77,43 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-		</div>
-	</div>
+			</div>
+			</div>
 	<!--about-end-->
 	<!--product-starts-->
 	<div class="product" > 
 		<div class="container">
+		<div class="col-md-6 about-left">
+				<a href="productDisplay?search=wo"><img class="img-responsive" alt="" src="resources/images/watchforher.jpg" style="height: 550px" vspace="30px" /></a>
+		</div>
+		<div class="col-md-6 about-left">
+				<a href="productDisplay?search=me"><img class="img-responsive" alt="" src="resources/images/watchforhim.jpg" style="height: 550px" vspace="30px"/></a>
+		</div>
+		
+		<div class="clearfix"></div>
+		<div class="clearfix"></div>
+		
 			<div class="product-top" >
 					<div class="col-md-3 product-left" ng-repeat="p in jsonData">
-					<div class="product-main simpleCart_shelfItem">
-							<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{p.productId}}-0.jpg" alt="product 1" /></a>
+						<div class="product-main simpleCart_shelfItem">
+						<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{p.productId}}-0.jpg" alt="product 1" /></a>
 							<div class="product-bottom">
 								<h3>{{p.productName}}</h3>
 								<p>Explore Now</p>
 								<h4><a class="item_add" href="viewProduct-{{p.productId}}"><i></i></a> <span class=" item_price">{{p.productPrice}}</span></h4>
 							</div>
-							<div class="srch">
+								<div class="srch">
 								<span>-{{p.productDiscount}}%</span>
-							</div>
+								</div>
+						</div>
 					</div>
-					</div>
-					
-							<div class="clearfix"></div>
+						<div class="clearfix"></div>
 			</div>
-				<div class="product-one">
+								<div class="product-one">
 							<div class="clearfix"></div>
-				</div>
-		</div>
-	<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
-	</div>
-	
+								</div>
+</div>
+</div>
 </div>
 
 <script>
@@ -117,6 +124,4 @@ app.controller("myCtrl", function($scope)
 	});
 </script>
 
-	
-	
 <%@ include file="footer.jsp" %>
