@@ -2,8 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page isELIgnored="false" %>
 <%@ include file="header.jsp" %>
-<html>
-<head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Category Form</title>
 <script>
@@ -116,8 +115,8 @@ tr,th,td {
 <td>{{clist.categoryId}}</td>
 <td>{{clist.categoryName}}</td>
 <td>{{clist.categoryDescription}}</td>
-<td><a href="editCategory-{{clist.categoryId}}">Edit</a></td>
-<td><a href="deleteCategory-{{clist.categoryId}}">Delete</a></td>
+<td><a href="editCategory-{{clist.categoryId}}"><span class="glyphicons glyphicons-edit"></span></a></td>
+<td><a href="deleteCategory-{{clist.categoryId}}"><span class="glyphicons glyphicons-bin"></span></a></td>
 </tr>
 
 </table>

@@ -23,23 +23,42 @@
 		    
 		    <div class="col-md-3 about-left">
 		    <figure class="effect-bubba">
-				<img alt="" src="resources/images/p-1.png" height="300px" width=200px vspace="20" />	
+				<img alt="" src="resources/images/allu.jpg" height="300px" width=200px vspace="20" />	
 						<figcaption>
-					
+							<h2>Ahmed Sunasara</h2>
+							<p>The Production Manager of CrossWatch performing activities all over Mumbai.</p>
 		    			</figcaption>			
 			</figure>
 		    </div>
 		    
 		    <div class="col-md-3 about-left">
-		    	<img alt="" src="resources/images/p-1.png" height="300px" width=200px vspace="20" />
+		    <figure class="effect-bubba">
+		    	<img alt="" src="resources/images/ramcharan.jpg" height="300px" width=200px vspace="20" />
+		    	<figcaption>
+		    		<h2>Ejaz Sunasara</h2>
+		    		<p>The Admin as well as Owner of CrossWatch performing the activities all over India.</p>
+		    	</figcaption>
+		    </figure>
 		    </div>
 		    
 		    <div class="col-md-3 about-left">
-		    	<img alt="" src="resources/images/p-1.png" height="300px" width=200px vspace="20" />
+		    <figure class="effect-bubba">
+		    	<img alt="" src="resources/images/prabhas.jpg" height="300px" width=200px vspace="20" />
+		    	<figcaption>
+		    		<h2>Akshit Dalmia</h2>
+		    		<p>The Sales Manager of CrossWatch who operates all over Mumbai.</p>
+		    	</figcaption>
+		    </figure>
 		    </div>
 		    
 		    <div class="col-md-3 about-left">
-		    	<img alt="" src="resources/images/p-1.png" height="300px" width=200px vspace="20" />
+		    	<figure class="effect-bubba">
+		    	<img alt="" src="resources/images/vidyut.jpg" height="300px" width=200px vspace="20" />
+		    	<figcaption>
+		    		<h2>Praful Shigwan</h2>
+		    		<p>The Promoter and the Legal Advisor of our Company who serve us over the Country.</p>
+		    	</figcaption>
+		    	</figure>
 		    </div>
 		    
 		    
