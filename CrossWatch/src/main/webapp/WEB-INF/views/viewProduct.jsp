@@ -112,16 +112,10 @@
 								
 						</div>
 							<ul class="tag-men">
-									<ol>
-										<li><h4>Category: </h4>
-										<h6>{{jsonData.categoryName}}</h6></li>
-									</ol>
-									<ol>
-									<li><h4>Discount: </h4>
-									<h6>{{jsonData.productDiscount}}</h6></li>
-									</ol>
-									<li><h4>Color: </h4>
-									<h6>{{jsonData.productColor}}</h6></li>
+									<li><span>Discount: </span>
+									<span class="women1">{{jsonData.productDiscount}}%</span></li>
+									<li><span>Color: </span>
+									<span class="women1">{{jsonData.productColor}}</span></li>
 <!-- 								<li><span>Category</span> -->
 <!-- 								<span class="women1">: {{jsonData.categoryName}}</span></li> -->
 <!-- 								<li><span>Discount</span> -->

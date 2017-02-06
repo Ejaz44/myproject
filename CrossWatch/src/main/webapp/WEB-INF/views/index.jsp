@@ -115,6 +115,7 @@
 </div>
 </div>
 </div>
+</div>
 
 <script>
 var app=angular.module("app",[]);

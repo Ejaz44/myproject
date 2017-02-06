@@ -51,8 +51,10 @@
 							${billingAddress.pincode}
 							<br/>
 							
+							<div class="address submit">
 							<input name="_eventId_edit" type="submit" value="Edit" />
-							<input name="_eventId_submit" type="submit" value="Confirm Detail" />	
+							<input name="_eventId_submit" type="submit" value="Confirm Detail" />
+							</div>	
 						</form:form>
 				</div>
 			</div>

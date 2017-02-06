@@ -22,7 +22,7 @@ app.controller("myCtrl", function($scope)
 </tr>
 
 <tr>
-<td><a href="viewProduct-{{jsonData.productId}}"></a><img src="resources/images/{{jsonData.productId}}-0.jpg" style="height: 200px" /></td>
+<td><a href="viewProduct-{{jsonData.productId}}"><img src="resources/images/{{jsonData.productId}}-0.jpg" style="height: 200px" /></a></td>
 <td>{{jsonData.productName}}</td>
 <td>{{jsonData.productQuantity}}</td>
 <td>{{jsonData.productPrice}}</td>
@@ -31,6 +31,6 @@ app.controller("myCtrl", function($scope)
 
 </div>
 
-<a href="checkout?userId=${sessionScope.userId}" class="add-cart item_add">Check OUT</a>
+<center><a href="checkout?userId=${sessionScope.userId}" class="add-cart item_add">Check OUT</a></center>
 </div>
 <%@ include file="footer.jsp" %>

@@ -51,9 +51,10 @@
 							${shippingAddress.pincode}
 							<br/>
 							
-							<input name="_eventId_edit" type="submit" value="Edit" />
+							<div class="address submit">
 							<input name="_eventId_submit" type="submit" value="Register" />	
-						
+							<input name="_eventId_edit" type="submit" value="Edit" />
+							</div>
 				</div>
 				</form:form>
 			</div>

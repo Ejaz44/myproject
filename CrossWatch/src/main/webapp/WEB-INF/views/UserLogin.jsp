@@ -25,7 +25,7 @@
 				<div class="col-md-6 account-right account-left">
 					<h3>New User? Create an Account</h3>
 					<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-					<a href="userRegistration">Create an Account</a>
+					<a href="reg">Create an Account</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>

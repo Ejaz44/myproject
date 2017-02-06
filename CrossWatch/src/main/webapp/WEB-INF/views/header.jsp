@@ -40,7 +40,7 @@ $(document).ready(function(){$(".memenu").memenu();});
 		<div class="container">
 			<div class="top-header-main">
 				<div class="col-md-6 top-header-left">
-					<a href="/CrossWatch/"><img src="resources/images/logo.jpg" style="height: 50px; width: 250px;" /></a>
+					<a href="/CrossWatch/"><img src="resources/images/ejaz_logo.png" style="height: 50px; width: 250px;" /></a>
 				</div>
 				<ul class="nav navbar-nav navbar-right">
       
