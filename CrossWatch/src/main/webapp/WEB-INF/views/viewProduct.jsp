@@ -158,7 +158,7 @@
 				</li>
 				<li class="item3"><a href="#"><img src="resources/images/arrow.png" alt="">Reviews</a>
 					<ul>
-						<li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
+						<li class="subitem1"><a href="#">Excellent watch. It was the best as I expected how it should be</a></li>
 					</ul>
 				</li>
 	 		</ul>

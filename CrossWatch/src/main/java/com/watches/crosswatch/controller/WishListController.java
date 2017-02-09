@@ -76,4 +76,4 @@ public class WishListController
 		wishListService.deleteWishList(wishListId);
 		return "redirect:/wishList";
 	}
-}
+}	

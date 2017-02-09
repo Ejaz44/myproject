@@ -35,17 +35,17 @@ app.controller("myCtrl", function($scope)
 </tr>
 
 <tr ng-repeat="p in jsonData">
-<td><a href="#"></a><img src="resources/images/{{p.productId}}-0.jpg" style="height: 200px"/></td>
+<td><a href="viewProduct-{{p.productId}}"><img src="resources/images/{{p.productId}}-0.jpg" style="height: 200px"/></a></td>
 <td>{{p.productName}}</td>
 <td>{{p.productQuantity}}</td>
 <td>{{p.productPrice}}</td>
 <td>{{p.productPrice*p.productQuantity}}</td>
-<td><a href="deleteCartItem-{{p.cartItemId}}">delete</a></td>
+<td><a href="deleteCartItem-{{p.cartItemId}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 </tr>
 </table>
 
 </div>
-<div>
+<div style="padding-left: 150px">
 <a href="/CrossWatch/" class="add-cart item_add">CONTINUE SHOPPING</a>
 <a href="cart" class="add-cart item_add">CHECKOUT</a>
 </div>

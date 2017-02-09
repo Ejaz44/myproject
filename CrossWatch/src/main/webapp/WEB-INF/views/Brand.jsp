@@ -105,8 +105,8 @@ tr,th,td {
 <td>{{blist.brandId}}</td>
 <td>{{blist.brandName}}</td>
 <td>{{blist.brandDescription}}</td>
-<td><a href="editBrand-{{blist.brandId}}">Edit</a></td>
-<td><a href="deleteBrand-{{blist.brandId}}">Delete</a></td>
+<td><a href="editBrand-{{blist.brandId}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+<td><a href="deleteBrand-{{blist.brandId}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 </tr>
 
 </table>

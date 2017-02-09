@@ -114,8 +114,8 @@ tr,th,td {
 <td>{{clist.categoryId}}</td>
 <td>{{clist.categoryName}}</td>
 <td>{{clist.categoryDescription}}</td>
-<td><a href="editCategory-{{clist.categoryId}}">Edit</a></td>
-<td><a href="deleteCategory-{{clist.categoryId}}">Delete</a></td>
+<td><a href="editCategory-{{clist.categoryId}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+<td><a href="deleteCategory-{{clist.categoryId}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 </tr>
 
 </table>

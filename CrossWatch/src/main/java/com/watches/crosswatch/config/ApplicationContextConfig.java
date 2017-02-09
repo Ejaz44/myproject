@@ -16,15 +16,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import com.watches.crosswatch.daoimpl.CartItemDAOImpl;
 import com.watches.crosswatch.model.BillingAddress;
 import com.watches.crosswatch.model.Brand;
 import com.watches.crosswatch.model.BuyNow;
 import com.watches.crosswatch.model.Cart;
 import com.watches.crosswatch.model.CartItem;
 import com.watches.crosswatch.model.Category;
-import com.watches.crosswatch.model.Order;
 import com.watches.crosswatch.model.Product;
 import com.watches.crosswatch.model.ProductDetail;
 import com.watches.crosswatch.model.Role;
@@ -35,7 +32,6 @@ import com.watches.crosswatch.model.User;
 import com.watches.crosswatch.model.UserDetail;
 import com.watches.crosswatch.model.UserRole;
 import com.watches.crosswatch.model.WishList;
-import com.watches.crosswatch.service.CartItemService;
 
 @Configuration
 @ComponentScan("com.watches.crosswatch")

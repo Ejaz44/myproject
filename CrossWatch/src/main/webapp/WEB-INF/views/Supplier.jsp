@@ -118,8 +118,8 @@ tr,th,td {
 <td>{{slist.supplierName}}</td>
 <td>{{slist.supplierAddress}}</td>
 <td>{{slist.supplierEmail}}</td>
-<td><a href="editSupplier-{{slist.supplierId}}">Edit</a></td>
-<td><a href="deleteSupplier-{{slist.supplierId}}">Delete</a></td>
+<td><a href="editSupplier-{{slist.supplierId}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+<td><a href="deleteSupplier-{{slist.supplierId}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 </tr>
 
 </table>

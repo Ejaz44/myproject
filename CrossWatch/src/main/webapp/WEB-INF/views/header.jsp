@@ -45,15 +45,15 @@ $(document).ready(function(){$(".memenu").memenu();});
 				<ul class="nav navbar-nav navbar-right">
       
       <c:if test="${empty pageContext.request.userPrincipal}">
-      <li><a href="userLogin"><img src="resources/images/account .png" /> Sign in</a></li>
-      <li><a href="reg"><span class=""></span> Registration</a></li>
+      <li><a href="userLogin"> Sign in</i></a></li>
+      <li><a href="reg"> Registration</a></li>
       <li><a href="ContactUs">Contact Us</a></li>
 	  </c:if>
 	  
 	  <c:if test="${!empty pageContext.request.userPrincipal}">
-      <li><a href="logout"><span class=""></span> Sign out</a></li>
+      <li><a href="logout"> Sign out</a></li>
    	  <li><a href="">${pageContext.request.userPrincipal.name}</a></li>
-      <li><a href="addCart-{{cartItemId}}">Go To Cart</a></li>
+      <li><a href="addCart-{{cartItemId}}"> Go To Cart</a></li>
 	  </c:if>
       
     </ul>

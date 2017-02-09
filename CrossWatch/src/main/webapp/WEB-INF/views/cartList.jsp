@@ -12,7 +12,7 @@ app.controller("myCtrl", function($scope)
 	});
 </script>
 <div class="container">
-  <h2>Cart List</h2>            
+  <center><h2>Cart List</h2></center>            
   <table class="table">
 <tr>
 <th>Product</th>

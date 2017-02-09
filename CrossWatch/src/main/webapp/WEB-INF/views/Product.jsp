@@ -148,8 +148,8 @@ function toggle()
 <td>{{plist.productPrice}}</td>
 <td>{{plist.productDiscount}}</td>
 
-<td><a href="editProduct-{{plist.productId}}">Edit</a></td>
-<td><a href="deleteProduct-{{plist.productId}}">Delete</a></td>
+<td><a href="editProduct-{{plist.productId}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+<td><a href="deleteProduct-{{plist.productId}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 </tr>
 </table>
 </div>

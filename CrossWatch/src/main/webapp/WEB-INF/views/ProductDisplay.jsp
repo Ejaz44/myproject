@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-<label>Search BOX: <input type="text" ng-model="searchKeyword"></label>
+<label>Filter: <input type="text" ng-model="searchKeyword"></label>
 <div class="prdt"> 
 		<div class="container">
 			<div class="prdt-top">

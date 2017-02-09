@@ -115,8 +115,8 @@ tr,th,td {
 <td>{{sclist.subCategoryId}}</td>
 <td>{{sclist.subCategoryName}}</td>
 <td>{{sclist.subCategoryDescription}}</td>
-<td><a href="editSubCategory-{{sclist.subCategoryId}}">Edit</a></td>
-<td><a href="deleteSubCategory-{{sclist.subCategoryId}}">Delete</a></td>
+<td><a href="editSubCategory-{{sclist.subCategoryId}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+<td><a href="deleteSubCategory-{{sclist.subCategoryId}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 </tr>
 
 </table>

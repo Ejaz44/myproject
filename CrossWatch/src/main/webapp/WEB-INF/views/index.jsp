@@ -94,7 +94,7 @@
 		<div class="clearfix"></div>
 		
 			<div class="product-top" >
-					<div class="col-md-3 product-left" ng-repeat="p in jsonData">
+					<div class="col-md-3 product-left" ng-repeat="p in jsonData | limitTo : 8">
 						<div class="product-main simpleCart_shelfItem">
 						<a href="viewProduct-{{p.productId}}" class="mask"><img class="img-responsive zoom-img" src="resources/images/{{p.productId}}-0.jpg" alt="product 1" /></a>
 							<div class="product-bottom">
